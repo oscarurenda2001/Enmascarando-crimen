@@ -65,7 +65,7 @@ var coyoteJumpOn : bool = false
 @onready var fallGravity : float = (-2.0 * jumpHeight) / (jumpTimeToFall * jumpTimeToFall)
 
 @export_group("Keybind variables")
-@export var moveForwardAction : String = ""
+@export var moveForwardAction : String = "move_forward"
 @export var moveBackwardAction : String = ""
 @export var moveLeftAction : String = ""
 @export var moveRightAction : String = ""
