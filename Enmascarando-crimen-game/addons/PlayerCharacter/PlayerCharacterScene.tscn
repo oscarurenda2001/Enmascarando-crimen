@@ -1,16 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://bwggrf7sbmkcv"]
+[gd_scene format=3 uid="uid://bwggrf7sbmkcv"]
 
-[ext_resource type="Script" uid="uid://d3s8yxuvpmekm" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/PlayerCharacterScript.gd" id="1_h128t"]
-[ext_resource type="Script" uid="uid://b0fbr48rbvn27" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/Camera/CameraScript.gd" id="2_x12n0"]
-[ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/UI/HUDScript.gd" id="16_5jm78"]
-[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/Arts/Ticketing.ttf" id="17_ryxgj"]
-[ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/StateMachineScript.gd" id="54_e0r17"]
-[ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/IdleStateScript.gd" id="55_dayh2"]
-[ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/WalkStateScript.gd" id="56_w3td4"]
-[ext_resource type="Script" uid="uid://5gk47o641xgt" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/RunStateScript.gd" id="57_gwv0a"]
-[ext_resource type="Script" uid="uid://dvu58wf01wils" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/JumpStateScript.gd" id="58_gwv0a"]
-[ext_resource type="Script" uid="uid://bh3rdvokmrar1" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/InairStateScript.gd" id="59_bqtt6"]
-[ext_resource type="Script" uid="uid://bhoqhv7escpyx" path="res://Godot-Simple-State-Machine-First-Person-Controller/addons/PlayerCharacter/StateMachine/CrouchStateScript.gd" id="60_tu3bf"]
+[ext_resource type="Script" uid="uid://d3s8yxuvpmekm" path="res://addons/PlayerCharacter/StateMachine/PlayerCharacterScript.gd" id="1_h128t"]
+[ext_resource type="Script" uid="uid://b0fbr48rbvn27" path="res://addons/PlayerCharacter/Camera/CameraScript.gd" id="2_x12n0"]
+[ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://addons/PlayerCharacter/UI/HUDScript.gd" id="16_5jm78"]
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="17_ryxgj"]
+[ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://addons/PlayerCharacter/StateMachine/StateMachineScript.gd" id="54_e0r17"]
+[ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://addons/PlayerCharacter/StateMachine/IdleStateScript.gd" id="55_dayh2"]
+[ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://addons/PlayerCharacter/StateMachine/WalkStateScript.gd" id="56_w3td4"]
+[ext_resource type="Script" uid="uid://5gk47o641xgt" path="res://addons/PlayerCharacter/StateMachine/RunStateScript.gd" id="57_gwv0a"]
+[ext_resource type="Script" uid="uid://dvu58wf01wils" path="res://addons/PlayerCharacter/StateMachine/JumpStateScript.gd" id="58_gwv0a"]
+[ext_resource type="Script" uid="uid://bh3rdvokmrar1" path="res://addons/PlayerCharacter/StateMachine/InairStateScript.gd" id="59_bqtt6"]
+[ext_resource type="Script" uid="uid://bhoqhv7escpyx" path="res://addons/PlayerCharacter/StateMachine/CrouchStateScript.gd" id="60_tu3bf"]
 
 [sub_resource type="Curve" id="Curve_2tsxa"]
 _limits = [10.0, 30.0, 0.0, 60.0]
@@ -43,7 +43,7 @@ font_size = 30
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
-[node name="PlayerCharacter" type="CharacterBody3D" groups=["PlayerCharacter"]]
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=1684901170 groups=["PlayerCharacter"]]
 collision_layer = 2
 floor_block_on_wall = false
 floor_max_angle = 1.13446
@@ -83,35 +83,35 @@ runAction = "run"
 crouchAction = "crouch"
 jumpAction = "jump"
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+[node name="StateMachine" type="Node" parent="." unique_id=1549167635 node_paths=PackedStringArray("initialState")]
 script = ExtResource("54_e0r17")
 initialState = NodePath("IdleState")
 
-[node name="IdleState" type="Node" parent="StateMachine"]
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1757075013]
 script = ExtResource("55_dayh2")
 metadata/_custom_type_script = "uid://stil4xkf3tk0"
 
-[node name="CrouchState" type="Node" parent="StateMachine"]
+[node name="CrouchState" type="Node" parent="StateMachine" unique_id=1562547651]
 script = ExtResource("60_tu3bf")
 metadata/_custom_type_script = "uid://bhoqhv7escpyx"
 
-[node name="WalkState" type="Node" parent="StateMachine"]
+[node name="WalkState" type="Node" parent="StateMachine" unique_id=1049275641]
 script = ExtResource("56_w3td4")
 metadata/_custom_type_script = "uid://blt7dest23fk0"
 
-[node name="RunState" type="Node" parent="StateMachine"]
+[node name="RunState" type="Node" parent="StateMachine" unique_id=850864751]
 script = ExtResource("57_gwv0a")
 metadata/_custom_type_script = "uid://5gk47o641xgt"
 
-[node name="JumpState" type="Node" parent="StateMachine"]
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1786915239]
 script = ExtResource("58_gwv0a")
 metadata/_custom_type_script = "uid://dvu58wf01wils"
 
-[node name="InairState" type="Node" parent="StateMachine"]
+[node name="InairState" type="Node" parent="StateMachine" unique_id=488409311]
 script = ExtResource("59_bqtt6")
 metadata/_custom_type_script = "uid://bh3rdvokmrar1"
 
-[node name="CameraHolder" type="Node3D" parent="."]
+[node name="CameraHolder" type="Node3D" parent="." unique_id=1554981792]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.55, 0)
 script = ExtResource("2_x12n0")
 XAxisSensibility = 0.05
@@ -131,39 +131,40 @@ camTiltRotationSpeed = 2.2
 onFloorTiltValDivider = 1.6
 mouseModeAction = "mouse_mode"
 
-[node name="Camera" type="Camera3D" parent="CameraHolder"]
+[node name="Camera" type="Camera3D" parent="CameraHolder" unique_id=1876018837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2832476e-08, 0, 1.2086658)
 cull_mask = 3
 current = true
 fov = 90.0
 near = 0.01
 far = 1000.0
 
-[node name="Hitbox" type="CollisionShape3D" parent="."]
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1940237797]
 shape = SubResource("CapsuleShape3D_5yjma")
 
-[node name="Model" type="MeshInstance3D" parent="."]
+[node name="Model" type="MeshInstance3D" parent="." unique_id=474506968]
 layers = 2
 material_override = SubResource("StandardMaterial3D_6bkys")
 mesh = SubResource("CapsuleMesh_p2iaj")
 
-[node name="Raycasts" type="Node3D" parent="."]
+[node name="Raycasts" type="Node3D" parent="." unique_id=1440028597]
 
-[node name="CeilingCheck" type="RayCast3D" parent="Raycasts"]
+[node name="CeilingCheck" type="RayCast3D" parent="Raycasts" unique_id=1957555770]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.758088, 0)
 exclude_parent = false
 target_position = Vector3(0, 3, 0)
 debug_shape_custom_color = Color(1, 0, 0, 1)
 
-[node name="FloorCheck" type="RayCast3D" parent="Raycasts"]
+[node name="FloorCheck" type="RayCast3D" parent="Raycasts" unique_id=936216953]
 exclude_parent = false
 target_position = Vector3(0, -3, 0)
 debug_shape_custom_color = Color(0, 0, 0.956863, 1)
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2140235268]
 script = ExtResource("16_5jm78")
 metadata/_edit_use_anchors_ = true
 
-[node name="Crosshair" type="CenterContainer" parent="HUD"]
+[node name="Crosshair" type="CenterContainer" parent="HUD" unique_id=1698547314]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -172,16 +173,16 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayCharInfos" type="HBoxContainer" parent="HUD"]
+[node name="PlayCharInfos" type="HBoxContainer" parent="HUD" unique_id=1544615438]
 offset_top = 7.0
 offset_right = 804.0
 offset_bottom = 357.0
 scale = Vector2(0.7, 0.7)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PlayCharInfos"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PlayCharInfos" unique_id=21619018]
 layout_mode = 2
 
-[node name="CurrentStateLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer"]
+[node name="CurrentStateLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer" unique_id=1610135837]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -189,7 +190,7 @@ text = "Current state : "
 label_settings = SubResource("LabelSettings_4e1aq")
 vertical_alignment = 1
 
-[node name="DesiredMoveSpeedLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer"]
+[node name="DesiredMoveSpeedLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer" unique_id=778876111]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -197,7 +198,7 @@ text = "Desired move speed : "
 label_settings = SubResource("LabelSettings_4e1aq")
 vertical_alignment = 1
 
-[node name="VelocityLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer"]
+[node name="VelocityLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer" unique_id=64954430]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -205,7 +206,7 @@ text = "Velocity : "
 label_settings = SubResource("LabelSettings_4e1aq")
 vertical_alignment = 1
 
-[node name="NbJumpsInAirAllowedLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer"]
+[node name="NbJumpsInAirAllowedLabel" type="Label" parent="HUD/PlayCharInfos/VBoxContainer" unique_id=855811608]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -213,10 +214,10 @@ text = "Nb jumps in air allowed :"
 label_settings = SubResource("LabelSettings_4e1aq")
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HUD/PlayCharInfos"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HUD/PlayCharInfos" unique_id=118394777]
 layout_mode = 2
 
-[node name="CurrentStateLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2"]
+[node name="CurrentStateLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2" unique_id=947464196]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -225,7 +226,7 @@ text = "..................."
 label_settings = SubResource("LabelSettings_3aho1")
 vertical_alignment = 1
 
-[node name="DesiredMoveSpeedLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2"]
+[node name="DesiredMoveSpeedLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2" unique_id=727031173]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -234,7 +235,7 @@ text = "..................."
 label_settings = SubResource("LabelSettings_3aho1")
 vertical_alignment = 1
 
-[node name="VelocityLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2"]
+[node name="VelocityLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2" unique_id=603757631]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -243,7 +244,7 @@ text = "..................."
 label_settings = SubResource("LabelSettings_3aho1")
 vertical_alignment = 1
 
-[node name="NbJumpsInAirAllowedLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2"]
+[node name="NbJumpsInAirAllowedLabelText" type="Label" parent="HUD/PlayCharInfos/VBoxContainer2" unique_id=1073013703]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -252,7 +253,7 @@ text = "..................."
 label_settings = SubResource("LabelSettings_3aho1")
 vertical_alignment = 1
 
-[node name="PlayCharInfos2" type="HBoxContainer" parent="HUD"]
+[node name="PlayCharInfos2" type="HBoxContainer" parent="HUD" unique_id=1710829006]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -263,10 +264,10 @@ offset_bottom = 43.0
 grow_horizontal = 0
 scale = Vector2(0.7, 0.7)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PlayCharInfos2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PlayCharInfos2" unique_id=1666225672]
 layout_mode = 2
 
-[node name="FramesPerSecondLabel" type="Label" parent="HUD/PlayCharInfos2/VBoxContainer"]
+[node name="FramesPerSecondLabel" type="Label" parent="HUD/PlayCharInfos2/VBoxContainer" unique_id=1345859821]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -274,10 +275,10 @@ text = "Frames per seconds : "
 label_settings = SubResource("LabelSettings_4e1aq")
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HUD/PlayCharInfos2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HUD/PlayCharInfos2" unique_id=527234364]
 layout_mode = 2
 
-[node name="FramesPerSecondLabelText" type="Label" parent="HUD/PlayCharInfos2/VBoxContainer2"]
+[node name="FramesPerSecondLabelText" type="Label" parent="HUD/PlayCharInfos2/VBoxContainer2" unique_id=1214532048]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2

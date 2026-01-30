@@ -1,10 +1,32 @@
-[gd_scene format=3 uid="uid://dvk3ojax2ipqo"]
+[gd_scene format=3 uid="uid://b0vcpv8r271r3"]
 
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_71jk5"]
+[ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_mt5rx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mt5rx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mt5rx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rcdd3"]
 
 [node name="Node3D" type="Node3D" unique_id=1875265199]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1438967292]
+script = ExtResource("1_mt5rx")
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=2123177]
 texture = ExtResource("1_71jk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1890306967]
+shape = SubResource("BoxShape3D_mt5rx")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=892204335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3447379)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=773308584]
+physics_material_override = SubResource("PhysicsMaterial_mt5rx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1862856292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0154197, 0)
+shape = SubResource("BoxShape3D_rcdd3")
+debug_color = Color(0.81586784, 0.2993061, 0.35465202, 1)
