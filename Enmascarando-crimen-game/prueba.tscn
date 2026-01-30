@@ -2,31 +2,29 @@
 
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_71jk5"]
 [ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_mt5rx"]
+[ext_resource type="PackedScene" uid="uid://bv3ji56bjs4q0" path="res://medieval_house/scene.gltf" id="3_rcdd3"]
+[ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="4_i5a71"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mt5rx"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mt5rx"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rcdd3"]
+size = Vector3(5.9836426, 1, 4.494629)
 
 [node name="Node3D" type="Node3D" unique_id=1875265199]
 
+[node name="Sketchfab_Scene" parent="." unique_id=2116128175 instance=ExtResource("3_rcdd3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.80615, -10.1143875, 324.78745)
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1438967292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3851154, 0, 0)
 script = ExtResource("1_mt5rx")
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=2123177]
 texture = ExtResource("1_71jk5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1890306967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008666992, 0, -1.7473145)
 shape = SubResource("BoxShape3D_mt5rx")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=892204335]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3447379)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=773308584]
-physics_material_override = SubResource("PhysicsMaterial_mt5rx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1862856292]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0154197, 0)
-shape = SubResource("BoxShape3D_rcdd3")
-debug_color = Color(0.81586784, 0.2993061, 0.35465202, 1)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=892204335 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0404706, 0, 3.7221508)
+script = ExtResource("4_i5a71")
+follow_target = NodePath("../CharacterBody3D")
