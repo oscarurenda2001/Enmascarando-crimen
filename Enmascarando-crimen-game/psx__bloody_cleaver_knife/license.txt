@@ -1,0 +1,8 @@
+Model Information:
+* title:	PSX  Bloody Cleaver Knife
+* source:	https://sketchfab.com/3d-models/psx-bloody-cleaver-knife-b8a1539f7e1d49628552dc72113b8149
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
