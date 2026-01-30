@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://c5la3xsg1w1es" path="res://medieval_house/textures/TextureMaterial_8_baseColor.png" id="26_8eeud"]
 [ext_resource type="Texture2D" uid="uid://c6r0dv7vta12y" path="res://medieval_house/textures/TextureMaterial_9_baseColor.png" id="27_eiu1u"]
 [ext_resource type="Texture2D" uid="uid://c64qgrv5oo2gn" path="res://medieval_house/textures/TextureMaterial_1_baseColor.png" id="28_uaicf"]
+[ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
+[ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mt5rx"]
 size = Vector3(5.9836426, 1, 4.494629)
@@ -1104,6 +1106,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m10af")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
+albedo_texture = ExtResource("30_caauc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0yig"]
+material = SubResource("StandardMaterial3D_2xgey")
+
 [node name="Node3D" type="Node3D" unique_id=1875265199]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1438967292]
@@ -1210,3 +1218,10 @@ mesh = SubResource("ArrayMesh_havl0")
 
 [node name="BackSide_6" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=539769110]
 mesh = SubResource("ArrayMesh_s814w")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1124555258 instance=ExtResource("29_3tmio")]
+transform = Transform3D(25, 0, 0, 0, -1.0927847e-06, 25, 0, -25, -1.0927847e-06, 72.14849, 3.1908646, -15.084223)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene" unique_id=1197223840]
+transform = Transform3D(0.0657615, -0.14099883, -4.1196754e-10, 0.0359631, 0.25782797, -1.05288445e-10, 1.5719973e-09, -1.5751827e-09, 0.019642591, 0, 1.2148807, 0.1310982)
+mesh = SubResource("BoxMesh_a0yig")
