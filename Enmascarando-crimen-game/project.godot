@@ -11,10 +11,16 @@ config_version=5
 [application]
 
 config/name="Nuevo Proyecto de Juego"
-
 run/main_scene="uid://oj3blpxqf1bl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[input]
+
+palante={
+"deadzone": 0.2,
+"events": []
+}
 
 [physics]
 
