@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://tc7w1uujoaeb"]
+
+[ext_resource type="Texture2D" uid="uid://b21ys1m5b2hjy" path="res://addons/Arts/godot-prototype-texture/back.png" id="1_mtdm2"]
+[ext_resource type="Script" uid="uid://dper7uy5ki13f" path="res://ui/canvas_layer.gd" id="1_xk8hf"]
+
+[node name="UserUi" type="Control" unique_id=150837490]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=29012688]
+script = ExtResource("1_xk8hf")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1209527897]
+offset_right = 165.0
+offset_bottom = 64.0
+scale = Vector2(0.6944891, 0.76123554)
+texture = ExtResource("1_mtdm2")
+
+[node name="Label_tiempo" type="Label" parent="CanvasLayer/TextureRect" unique_id=1964546329]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.9599997)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "100"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=1885399374]
+autostart = true
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_timer_timeout"]
