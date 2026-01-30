@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://c64qgrv5oo2gn" path="res://medieval_house/textures/TextureMaterial_1_baseColor.png" id="28_uaicf"]
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
+[ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="31_caauc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mt5rx"]
 size = Vector3(5.9836426, 1, 4.494629)
@@ -1112,11 +1113,14 @@ albedo_texture = ExtResource("30_caauc")
 [sub_resource type="BoxMesh" id="BoxMesh_a0yig"]
 material = SubResource("StandardMaterial3D_2xgey")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0yig"]
+
 [node name="Node3D" type="Node3D" unique_id=1875265199]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1438967292]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3851154, 0, 0)
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1438967292 node_paths=PackedStringArray("camera")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 3.9590108, 24.596931, 0)
 script = ExtResource("1_mt5rx")
+camera = NodePath("Camera3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=2123177]
 texture = ExtResource("1_71jk5")
@@ -1125,10 +1129,10 @@ texture = ExtResource("1_71jk5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008666992, 0, -1.7473145)
 shape = SubResource("BoxShape3D_mt5rx")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=892204335 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0404706, 0, 3.7221508)
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=892204335 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.022963502, -0.3422204, 1.0534981)
 script = ExtResource("4_i5a71")
-follow_target = NodePath("../CharacterBody3D")
+follow_target = NodePath("..")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=404046039]
 
@@ -1225,3 +1229,21 @@ transform = Transform3D(25, 0, 0, 0, -1.0927847e-06, 25, 0, -25, -1.0927847e-06,
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene" unique_id=1197223840]
 transform = Transform3D(0.0657615, -0.14099883, -4.1196754e-10, 0.0359631, 0.25782797, -1.05288445e-10, 1.5719973e-09, -1.5751827e-09, 0.019642591, 0, 1.2148807, 0.1310982)
 mesh = SubResource("BoxMesh_a0yig")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=76136656]
+transform = Transform3D(207.9628, 0, 0, 0, 2.6546626, -4.5474735e-13, 0, 7.1054274e-15, 147.50723, 0, 0, -9.536743e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=800226972]
+physics_interpolation_mode = 1
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_a0yig")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=371835214]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Sketchfab_Scene" parent="StaticBody3D" unique_id=417288104 instance=ExtResource("31_caauc")]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999995, 2.4029155, 0.31908426, -0.66584885)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1360480903]
+transform = Transform3D(1, 0, 0, 0, 1, -2.6765843e-15, 0, 2.6765843e-15, 1, 0.18157196, 65.78311, -9.536743e-07)
+light_color = Color(0.57861936, 0.53164613, 0.4669059, 1)
