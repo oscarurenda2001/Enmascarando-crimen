@@ -1,5 +1,5 @@
 extends Node3D
-@export var puntuacion: int = 5
+@export var puntuacion: int = 10
 @export var sprite: Node
 var is_colected: bool = false
 

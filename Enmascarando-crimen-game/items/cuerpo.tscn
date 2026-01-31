@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dbpsghohoi6o6"]
+
+[ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="1_2vdtv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dnhw1"]
+
+[node name="Cuerpo" type="Node3D" unique_id=344555295]
+
+[node name="Cuerpo_Scene" parent="." unique_id=466469895 instance=ExtResource("1_2vdtv")]
+
+[node name="StaticBody" type="StaticBody3D" parent="Cuerpo_Scene" unique_id=2112426351]
+
+[node name="CollisionBody" type="CollisionShape3D" parent="Cuerpo_Scene/StaticBody" unique_id=449407842]
+transform = Transform3D(1.8, 0, 0, 0, 1.8251178, 0, 0, 0, 0.36, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_dnhw1")
