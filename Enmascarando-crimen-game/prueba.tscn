@@ -1,8 +1,6 @@
-[gd_scene format=4 uid="uid://dvk3ojax2ipqo"]
+[gd_scene format=4 uid="uid://b0vcpv8r271r3"]
 
-[ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_mt5rx"]
-[ext_resource type="PackedScene" uid="uid://s34se0lyo2sl" path="res://MainCharacter/sketchfab_scene.tscn" id="3_caauc"]
-[ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="4_i5a71"]
+[ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="1_4c11n"]
 [ext_resource type="Texture2D" uid="uid://djrhxhduq2rrk" path="res://medieval_house/textures/TextureMaterial_11_baseColor.png" id="4_xru3o"]
 [ext_resource type="Texture2D" uid="uid://cgb21caqa5nuk" path="res://medieval_house/textures/TextureMaterial_12_baseColor.png" id="5_4c11n"]
 [ext_resource type="Texture2D" uid="uid://c4ckg33dcmxjw" path="res://medieval_house/textures/TextureMaterial_14_baseColor.png" id="6_3tmio"]
@@ -31,9 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="31_caauc"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_71jk5"]
-size = Vector3(1, 1, 0.63378906)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st1si"]
 resource_name = "TextureMaterial_11"
@@ -1117,113 +1112,96 @@ material = SubResource("StandardMaterial3D_2xgey")
 
 [node name="Node3D" type="Node3D" unique_id=1875265199]
 
-[node name="MainCharacter" type="CharacterBody3D" parent="." unique_id=1438967292 node_paths=PackedStringArray("camera", "arms")]
+[node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("1_4c11n")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 3.959, 0, 0)
-script = ExtResource("1_mt5rx")
-camera = NodePath("Camera3D")
-arms = NodePath("Camera3D/Brazos")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter" unique_id=47576389]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, 0.5, 0.183)
-shape = SubResource("BoxShape3D_71jk5")
+[node name="Nivel1" type="Node3D" parent="." unique_id=404046039]
 
-[node name="Camera3D" type="Camera3D" parent="MainCharacter" unique_id=892204335 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(-0.025, 0, -2.1855695e-09, 0, 0.025, 0, 2.1855695e-09, 0, -0.025, 0.03587985, 0.68429613, -0.163146)
-fov = 73.125
-script = ExtResource("4_i5a71")
-follow_target = NodePath("..")
-
-[node name="Brazos" parent="MainCharacter/Camera3D" unique_id=660299199 instance=ExtResource("3_caauc")]
-transform = Transform3D(-9.27192, 9.853118e-08, 5.1519936e-07, 1.6470239e-14, 5.8931937, -1.1270652, -8.1057686e-07, -1.1270652, -5.8931937, 1.4349978, -32.268337, 0.69859076)
-script = null
-
-[node name="Node3D" type="Node3D" parent="." unique_id=404046039]
-
-[node name="skpC622__USDInstance_1" type="Node3D" parent="Node3D" unique_id=345247988]
+[node name="skpC622__USDInstance_1" type="Node3D" parent="Nivel1" unique_id=345247988]
 transform = Transform3D(0.01, 0, 0, 0, 2.5953575e-18, 0.011688451, 0, -0.01, 2.220446e-18, 30.258163, 7.418374e-14, 15.713287)
 
-[node name="FrontSide_3" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1509801296]
+[node name="FrontSide_3" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1509801296]
 mesh = SubResource("ArrayMesh_cjwtt")
 
-[node name="FrontSide_4" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=645471182]
+[node name="FrontSide_4" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=645471182]
 mesh = SubResource("ArrayMesh_637uf")
 
-[node name="FrontSide_6" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1743709147]
+[node name="FrontSide_6" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1743709147]
 mesh = SubResource("ArrayMesh_3um7j")
 
-[node name="FrontSide_7" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=78693755]
+[node name="FrontSide_7" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=78693755]
 mesh = SubResource("ArrayMesh_fmekg")
 
-[node name="FrontSide_8" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=238839403]
+[node name="FrontSide_8" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=238839403]
 mesh = SubResource("ArrayMesh_n8fui")
 
-[node name="FrontSide_9" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=554815307]
+[node name="FrontSide_9" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=554815307]
 mesh = SubResource("ArrayMesh_mjuwl")
 
-[node name="FrontSide_10" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=2133164843]
+[node name="FrontSide_10" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=2133164843]
 mesh = SubResource("ArrayMesh_pt8ix")
 
-[node name="FrontSide_11" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=2084853468]
+[node name="FrontSide_11" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=2084853468]
 mesh = SubResource("ArrayMesh_1nfdb")
 
-[node name="FrontSide_12" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=899089116]
+[node name="FrontSide_12" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=899089116]
 mesh = SubResource("ArrayMesh_3sqfe")
 
-[node name="FrontSide_14" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=994875626]
+[node name="FrontSide_14" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=994875626]
 mesh = SubResource("ArrayMesh_qsptk")
 
-[node name="FrontSide_15" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1106950769]
+[node name="FrontSide_15" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1106950769]
 mesh = SubResource("ArrayMesh_hk4mn")
 
-[node name="FrontSide_16" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1455878253]
+[node name="FrontSide_16" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1455878253]
 mesh = SubResource("ArrayMesh_rpkff")
 
-[node name="FrontSide_17" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1217544499]
+[node name="FrontSide_17" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1217544499]
 mesh = SubResource("ArrayMesh_gmqnf")
 
-[node name="FrontSide_18" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=500750425]
+[node name="FrontSide_18" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=500750425]
 mesh = SubResource("ArrayMesh_1plb7")
 
-[node name="FrontSide_19" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1250577886]
+[node name="FrontSide_19" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1250577886]
 mesh = SubResource("ArrayMesh_xjn1t")
 
-[node name="FrontSide_20" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=569236666]
+[node name="FrontSide_20" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=569236666]
 mesh = SubResource("ArrayMesh_hsrrj")
 
-[node name="FrontSide_21" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=201928784]
+[node name="FrontSide_21" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=201928784]
 mesh = SubResource("ArrayMesh_ivxyl")
 
-[node name="FrontSide_23" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=2108237182]
+[node name="FrontSide_23" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=2108237182]
 mesh = SubResource("ArrayMesh_ucxdg")
 
-[node name="FrontSide_24" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1760097541]
+[node name="FrontSide_24" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1760097541]
 mesh = SubResource("ArrayMesh_v57vw")
 
-[node name="FrontSide_26" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=2077492996]
+[node name="FrontSide_26" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=2077492996]
 mesh = SubResource("ArrayMesh_d5gmp")
 
-[node name="FrontSide_27" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=2094381322]
+[node name="FrontSide_27" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=2094381322]
 mesh = SubResource("ArrayMesh_teke0")
 
-[node name="FrontSide_28" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1892248818]
+[node name="FrontSide_28" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1892248818]
 mesh = SubResource("ArrayMesh_r8jxj")
 
-[node name="FrontSide_30" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1150374784]
+[node name="FrontSide_30" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1150374784]
 mesh = SubResource("ArrayMesh_6ha28")
 
-[node name="FrontSide_31" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1165088185]
+[node name="FrontSide_31" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1165088185]
 mesh = SubResource("ArrayMesh_8lux5")
 
-[node name="BackSide_1" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=135246016]
+[node name="BackSide_1" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=135246016]
 mesh = SubResource("ArrayMesh_xhsqq")
 
-[node name="BackSide_2" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1454205798]
+[node name="BackSide_2" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1454205798]
 mesh = SubResource("ArrayMesh_ywbxv")
 
-[node name="BackSide_3" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1704884993]
+[node name="BackSide_3" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=1704884993]
 mesh = SubResource("ArrayMesh_havl0")
 
-[node name="BackSide_6" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=539769110]
+[node name="BackSide_6" type="MeshInstance3D" parent="Nivel1/skpC622__USDInstance_1" unique_id=539769110]
 mesh = SubResource("ArrayMesh_s814w")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1124555258 instance=ExtResource("29_3tmio")]
