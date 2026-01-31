@@ -15,6 +15,10 @@ run/main_scene="uid://oj3blpxqf1bl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://djx8y0j0h866h"
+
 [input]
 
 palante={

@@ -8,8 +8,8 @@ func interact():
 		return
 	is_colected = true
 	emit_signal("Puntuacion",puntuacion)
-	
-func _input_event(camera, event, position, normal, shape_idx):
+
+func _input_event():
 		GameManager.add_game_score(puntuacion)
 		queue_free()
 # Called when the node enters the scene tree for the first time.
