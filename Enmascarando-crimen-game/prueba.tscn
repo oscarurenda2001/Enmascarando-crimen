@@ -1121,7 +1121,7 @@ material = SubResource("StandardMaterial3D_2xgey")
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 3.959, 0, 0)
 script = ExtResource("1_mt5rx")
 camera = NodePath("Camera3D")
-arms = NodePath("Brazos")
+arms = NodePath("Camera3D/Brazos")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter" unique_id=47576389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, 0.5, 0.183)
@@ -1133,8 +1133,8 @@ fov = 73.125
 script = ExtResource("4_i5a71")
 follow_target = NodePath("..")
 
-[node name="Brazos" parent="MainCharacter" unique_id=660299199 instance=ExtResource("3_caauc")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+[node name="Brazos" parent="MainCharacter/Camera3D" unique_id=660299199 instance=ExtResource("3_caauc")]
+transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6.0000005, 0, 5.2453663e-07, 0, -5.9999995, 1.5, -27, -6)
 script = null
 
 [node name="Node3D" type="Node3D" parent="." unique_id=404046039]

@@ -21,9 +21,7 @@ func _input(event):
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	camera.rotation = Vector3(pitch, yaw, 0.0)
-	camera.position = Vector3(0, 1, 0.5)
-	arms.rotation = Vector3(pitch, yaw, 0.0)
-	#arms.position = Vector3(-sin(yaw), 0, -cos(yaw))
+	camera.global_position = Vector3(0, 30, 0)
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -39,9 +37,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
-	#arms.position.z += 2
-	#arms.position.x += 2
 
 	count += 1
 	move_and_slide()
