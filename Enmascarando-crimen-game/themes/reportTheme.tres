@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://tfjquu1rvrns"]
+
+[ext_resource type="FontFile" uid="uid://b830xms270wwm" path="res://fuentes/report/1942.ttf" id="1_gqkoi"]
+
+[resource]
+default_font = ExtResource("1_gqkoi")
+default_font_size = 26
