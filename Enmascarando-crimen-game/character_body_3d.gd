@@ -1,7 +1,8 @@
+class_name Brazos
 extends CharacterBody3D
 
 @export var camera: Node3D
-@export var arms : Node3D
+@export var arms : Brazos
 
 var count := 0
 var yaw := 0.0
@@ -12,6 +13,7 @@ const SENS := 0.01
 const SPEED = 15.0
 const JUMP_VELOCITY = 4.5
 
+	
 func _input(event):
 	if event is InputEventMouseMotion:
 		yaw -= event.relative.x * SENS
@@ -22,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	camera.rotation = Vector3(pitch, yaw, 0.0)
 	camera.global_position = Vector3(0, 30, 0)
+
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta

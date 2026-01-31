@@ -1,13 +1,15 @@
 extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@export var camera : Node3D
-func _start_animation():
+func start_animation():
 	animation_player.play("arms_armature|Relax_hands_idle_start")
+	await animation_player.animation_finished
 	animation_player.play("arms_armature|Relax_hands_idle")
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_start_animation()
+	start_animation()
+
+
 	 # Replace with function body.
 
 func _pick_something():
@@ -15,8 +17,12 @@ func _pick_something():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	pass
+	
+	if Input.is_key_pressed(KEY_SPACE):
+		_pick_something()
+		await animation_player.animation_finished
+		start_animation()
+		
 	#if not get_parent().is_on_floor():
 		#get_parent().velocity += get_parent().get_gravity() * delta
 #
