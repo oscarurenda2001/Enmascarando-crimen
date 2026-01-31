@@ -27,6 +27,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5563488, 1.0681152, 9.53674
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_0/StaticBody3D" index="0" unique_id=1224209235]
 shape = SubResource("ConcavePolygonShape3D_th03a")
 
+[node name="FrontSide_1" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1" index="1" unique_id=1398973112]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_3" parent_id_path=PackedInt32Array(980926201) index="0" unique_id=1648315724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 576.03503, -639.40497, -44.080105)
 
