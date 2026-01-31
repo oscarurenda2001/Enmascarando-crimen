@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://br7c8ob8l6yi8" path="res://items/sangre.gd" id="1_3plae"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="1_4c11n"]
 [ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="2_i2p14"]
-[ext_resource type="PackedScene" uid="uid://c15xv4gigd7qk" path="res://items/sangre.tscn" id="8_rvi4t"]
+[ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="7_8bjpd"]
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="31_caauc"]
-[ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="32_2xgey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
 albedo_texture = ExtResource("30_caauc")
@@ -50,8 +49,5 @@ transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999995, 2.402
 transform = Transform3D(1, 0, 0, 0, 1, -2.6765843e-15, 0, 2.6765843e-15, 1, 0.18157196, 65.78311, -9.536743e-07)
 light_color = Color(0.57861936, 0.53164613, 0.4669059, 1)
 
-[node name="Cuchillo" parent="." unique_id=159073546 instance=ExtResource("32_2xgey")]
-transform = Transform3D(16.527079, 11.263022, -4.9232244e-07, 0, -8.7422785e-07, -20, -11.263022, 16.527079, -7.2242165e-07, -79.893524, 8.055431, 5.9222183)
-
-[node name="Sangre" parent="." unique_id=1309076498 instance=ExtResource("8_rvi4t")]
-transform = Transform3D(187.65219, 0, 0, 0, -0.39099768, 0, 0, 0, 44.015476, -23.46186, 19.265099, 16.477173)
+[node name="Cuerpo" parent="." unique_id=344555295 instance=ExtResource("7_8bjpd")]
+transform = Transform3D(21.260519, 0, 0, 0, 17.718506, 0, 0, 0, 21.348305, -38.142754, 0, 2.3215828)

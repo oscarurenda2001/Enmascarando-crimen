@@ -2,7 +2,7 @@ extends Camera3D
 
 @export var follow_target: Node3D
 @export var ray_length: float = 100.0  # distancia del raycast
-
+var items = ['StaticCuerpo','StaticSangre','StaticCuchillo','StaticPisada']
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -15,12 +15,13 @@ func _process(delta: float) -> void:
 	var ray_params = PhysicsRayQueryParameters3D.new()
 	ray_params.from = global_position
 	ray_params.to = global_position + -global_transform.basis.z * ray_length
-	ray_params.collision_mask = 1  
+	ray_params.collision_mask = 1  # Ajusta según tus objetos
+	# ray_params.exclude = [self]  # opcional: evitar colisión contigo mismo
 
+	# Ejecutar raycast
 	var result = space_state.intersect_ray(ray_params)
 
 	if result:
 		var collider = result.collider
-		if(result.collider == self):
+		if(result.collider.name in items):
 			print(collider.name)
-		print("Mirando el item: ", collider.name)
