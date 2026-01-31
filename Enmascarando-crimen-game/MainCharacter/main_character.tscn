@@ -25,3 +25,6 @@ follow_target = NodePath("..")
 
 [node name="Brazos" parent="Camera3D" unique_id=660299199 instance=ExtResource("3_toywe")]
 transform = Transform3D(-9.27192, 9.853118e-08, 5.1519936e-07, 1.6470239e-14, 5.8931937, -1.1270652, -8.1057686e-07, -1.1270652, -5.8931937, 1.4349978, -32.268337, 0.69859076)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1887046838]
+collision_mask = 4

@@ -1,10 +1,26 @@
 extends Camera3D
 
 @export var follow_target: Node3D
-# Called when the node enters the scene tree for the first time.
+@export var ray_length: float = 100.0  # distancia del raycast
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Mantener la cámara sobre el objetivo
 	global_position = follow_target.global_position + Vector3(0, 30, 0)
+
+	# Preparar raycast
+	var space_state = get_world_3d().direct_space_state
+	var ray_params = PhysicsRayQueryParameters3D.new()
+	ray_params.from = global_position
+	ray_params.to = global_position + -global_transform.basis.z * ray_length
+	ray_params.collision_mask = 1  
+
+	var result = space_state.intersect_ray(ray_params)
+
+	if result:
+		var collider = result.collider
+		if(result.collider == self):
+			print(collider.name)
+		print("Mirando el item: ", collider.name)
