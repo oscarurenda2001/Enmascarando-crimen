@@ -10,9 +10,6 @@ func interact():
 	emit_signal("Puntuacion",puntuacion)
 	
 func _input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton \
-	and event.pressed \
-	and event.button_index == MOUSE_BUTTON_LEFT:
 		GameManager.add_game_score(puntuacion)
 		queue_free()
 # Called when the node enters the scene tree for the first time.
