@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3tuma02yo655"]
 
-[ext_resource type="Script" path="res://escenas/ui/user_ui_2.gd" id="1_3hd44"]
+[ext_resource type="Script" uid="uid://bdoily064k7q8" path="res://ui/user_ui_2.gd" id="1_3hd44"]
 [ext_resource type="Texture2D" uid="uid://b21ys1m5b2hjy" path="res://addons/Arts/godot-prototype-texture/back.png" id="1_wm4a7"]
 
 [node name="UserUi2" type="CanvasLayer" unique_id=191796885]

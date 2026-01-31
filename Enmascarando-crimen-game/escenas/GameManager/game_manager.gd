@@ -7,16 +7,16 @@ signal time_changed(time_left)
 signal level_won
 signal level_lost
 const SCENE_FINISH = "res://escenas/SceneFinish/EsceneFinish.tscn"
-var scene_finish_instance = preload(SCENE_FINISH).instantiate()
 
 var current_score: int = 0
-var time_left: int = 40
-var max_time: int = 40
+var time_left: int = 5
+var max_time: int = 5
 var is_playing: bool = false
 var exit: bool = false
 var win: bool = false
 var min_score: int = 100
 var finalScore: int = 0
+var actual_scene = 'tutorial'
 
 
 
@@ -40,16 +40,10 @@ func end_game() -> void:
 		return 
 		
 	GameManager.finalScore = current_score
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file(SCENE_FINISH)
 	if exit or time_left <= 0:
 		is_playing = false
-		
-		if current_score >= min_score:
-			win = true
-			emit_signal("level_won")
-		else:
-			win = false
-			emit_signal("level_lost")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

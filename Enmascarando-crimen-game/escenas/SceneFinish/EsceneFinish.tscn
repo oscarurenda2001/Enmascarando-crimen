@@ -4,6 +4,7 @@
 script/source = "extends CanvasLayer
 
 const PRUEBA = \"res://prueba.tscn\"
+const SECOND_LEVEL = \"res://escenas/SecondMap/SecondMap.tscn\"
 
 var level_completed = false
 
@@ -11,7 +12,12 @@ var level_completed = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setLabelsResult(GameManager.finalScore)
-	$VBoxContainer/Button.visible = level_completed
+	if level_completed == true:
+		if GameManager.actual_scene == 'tutorial':
+			$VBoxContainer/NextLevelButton.visible = true
+		if GameManager.actual_scene == 'SegundoLugar':
+			$VBoxContainer/NextLevelButton.visible = false
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,6 +38,12 @@ func setLabelsResult(result):
 
 func _on_repeat_level_button_button_down() -> void:
 	get_tree().change_scene_to_file(PRUEBA)
+
+
+func _on_next_level_button_button_down() -> void:
+	GameManager.actual_scene = 'SegundoLugar'
+	get_tree().change_scene_to_file(SECOND_LEVEL)
+	
 "
 
 [sub_resource type="Theme" id="Theme_tnfj1"]
@@ -75,7 +87,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Tu puntuación: 100"
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1603921680]
+[node name="NextLevelButton" type="Button" parent="VBoxContainer" unique_id=1603921680]
 layout_mode = 2
 text = "Pasar al próximo nivel"
 
@@ -83,4 +95,5 @@ text = "Pasar al próximo nivel"
 layout_mode = 2
 text = "Repetir nivel"
 
+[connection signal="button_down" from="VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/RepeatLevelButton" to="." method="_on_repeat_level_button_button_down"]

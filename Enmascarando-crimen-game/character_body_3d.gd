@@ -59,6 +59,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = -sin(yaw) * SPEED
 		if count % 2 and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+	elif Input.is_action_pressed("click"):
+		camera.check_if_object()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
