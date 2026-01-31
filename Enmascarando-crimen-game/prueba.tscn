@@ -1,5 +1,5 @@
+[gd_scene format=4 uid="uid://dvk3ojax2ipqo"]
 
-[gd_scene format=4 uid="uid://b0vcpv8r271r3"]
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_71jk5"]
 [ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_mt5rx"]
 [ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="4_i5a71"]
@@ -32,8 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="31_caauc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mt5rx"]
-size = Vector3(5.9836426, 1, 4.494629)
+[sub_resource type="BoxShape3D" id="BoxShape3D_71jk5"]
+size = Vector3(1, 1, 0.63378906)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st1si"]
 resource_name = "TextureMaterial_11"
@@ -1115,9 +1115,6 @@ material = SubResource("StandardMaterial3D_2xgey")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0yig"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_71jk5"]
-size = Vector3(1, 1, 0.63378906)
-
 [node name="Node3D" type="Node3D" unique_id=1875265199]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1438967292 node_paths=PackedStringArray("camera")]
@@ -1128,14 +1125,9 @@ camera = NodePath("Camera3D")
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=2123177]
 texture = ExtResource("1_71jk5")
 
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=47576389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012499809, -0.20188558, 0.18310559)
 shape = SubResource("BoxShape3D_71jk5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1890306967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008666992, 0, -1.7473145)
-shape = SubResource("BoxShape3D_mt5rx")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=892204335 node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.022963502, -0.3422204, 1.0534981)
