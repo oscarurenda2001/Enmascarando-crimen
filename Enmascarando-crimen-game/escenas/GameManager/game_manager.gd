@@ -10,13 +10,14 @@ const SCENE_FINISH = "res://escenas/SceneFinish/EsceneFinish.tscn"
 var scene_finish_instance = preload(SCENE_FINISH).instantiate()
 
 var current_score: int = 0
-var time_left: int = 40
-var max_time: int = 40
+var time_left: int = 5
+var max_time: int = 5
 var is_playing: bool = false
 var exit: bool = false
 var win: bool = false
 var min_score: int = 100
 var finalScore: int = 0
+var actual_scene = 'tutorial'
 
 
 
