@@ -1,6 +1,8 @@
-[gd_scene format=4 uid="uid://b0vcpv8r271r3"]
+[gd_scene format=4 uid="uid://dvk3ojax2ipqo"]
 
-[ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="1_4c11n"]
+[ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_71jk5"]
+[ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_mt5rx"]
+[ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="4_i5a71"]
 [ext_resource type="Texture2D" uid="uid://djrhxhduq2rrk" path="res://medieval_house/textures/TextureMaterial_11_baseColor.png" id="4_xru3o"]
 [ext_resource type="Texture2D" uid="uid://cgb21caqa5nuk" path="res://medieval_house/textures/TextureMaterial_12_baseColor.png" id="5_4c11n"]
 [ext_resource type="Texture2D" uid="uid://c4ckg33dcmxjw" path="res://medieval_house/textures/TextureMaterial_14_baseColor.png" id="6_3tmio"]
@@ -29,6 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="31_caauc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71jk5"]
+size = Vector3(1, 1, 0.63378906)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st1si"]
 resource_name = "TextureMaterial_11"
@@ -1120,7 +1125,18 @@ camera = NodePath("Camera3D")
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=2123177]
 texture = ExtResource("1_71jk5")
 
-[node name="skpC622__USDInstance_1" type="Node3D" parent="Nivel1" unique_id=345247988]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=47576389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012499809, -0.20188558, 0.18310559)
+shape = SubResource("BoxShape3D_71jk5")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=892204335 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.022963502, -0.3422204, 1.0534981)
+script = ExtResource("4_i5a71")
+follow_target = NodePath("..")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=404046039]
+
+[node name="skpC622__USDInstance_1" type="Node3D" parent="Node3D" unique_id=345247988]
 transform = Transform3D(0.01, 0, 0, 0, 2.5953575e-18, 0.011688451, 0, -0.01, 2.220446e-18, 30.258163, 7.418374e-14, 15.713287)
 
 [node name="FrontSide_3" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=1509801296]
