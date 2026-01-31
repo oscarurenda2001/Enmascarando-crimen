@@ -36,4 +36,4 @@ theme = SubResource("Theme_hbfp4")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/background = SubResource("StyleBoxFlat_hbfp4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3vvvo")
-text = "Estás en la escena de un crimen. Pulsa click izquierdo para interactuar con los objetos y wasd para moverte. Pulsa C para ver el archivo del caso."
+text = "Estás en la escena de un crimen. Pulsa click izquierdo para interactuar con los objetos y wasd para moverte. Arriba a la izquierda está el reporte del caso, pulsa C para abrirlo."
