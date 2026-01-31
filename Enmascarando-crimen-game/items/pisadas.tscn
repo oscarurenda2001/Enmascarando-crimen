@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dmbis5e76n5qs"]
+
+[ext_resource type="Script" uid="uid://bvr4scriu6cqi" path="res://items/pisadas.gd" id="1_7jl5p"]
+[ext_resource type="PackedScene" uid="uid://cl3x5wfvaep7o" path="res://pbis_footsteps/scene.gltf" id="1_uu88e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sg1ho"]
+
+[node name="Pisadas" type="Node3D" unique_id=972373460]
+script = ExtResource("1_7jl5p")
+
+[node name="PisadasScene" parent="." unique_id=1925052010 instance=ExtResource("1_uu88e")]
+
+[node name="StaticPisada" type="StaticBody3D" parent="PisadasScene" unique_id=206476412]
+
+[node name="CollisionPisada" type="CollisionShape3D" parent="PisadasScene/StaticPisada" unique_id=739917010]
+transform = Transform3D(0.3, 0, 0, 0, -0.028000005, 0, 0, 0, 0.4, 0, 0, -0.015)
+shape = SubResource("BoxShape3D_sg1ho")
