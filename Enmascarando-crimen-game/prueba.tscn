@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dvk3ojax2ipqo"]
 
 [ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_mt5rx"]
-[ext_resource type="PackedScene" path="res://MainCharacter/sketchfab_scene.tscn" id="3_caauc"]
+[ext_resource type="PackedScene" uid="uid://s34se0lyo2sl" path="res://MainCharacter/sketchfab_scene.tscn" id="3_caauc"]
 [ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="4_i5a71"]
 [ext_resource type="Texture2D" uid="uid://djrhxhduq2rrk" path="res://medieval_house/textures/TextureMaterial_11_baseColor.png" id="4_xru3o"]
 [ext_resource type="Texture2D" uid="uid://cgb21caqa5nuk" path="res://medieval_house/textures/TextureMaterial_12_baseColor.png" id="5_4c11n"]
@@ -1134,7 +1134,7 @@ script = ExtResource("4_i5a71")
 follow_target = NodePath("..")
 
 [node name="Brazos" parent="MainCharacter/Camera3D" unique_id=660299199 instance=ExtResource("3_caauc")]
-transform = Transform3D(-6, 0, 5.2453663e-07, 0, 6, 0, -5.2453663e-07, 0, -6, 1.4351945, -27.371845, -6.5258403)
+transform = Transform3D(-9.27192, 9.853118e-08, 5.1519936e-07, 1.6470239e-14, 5.8931937, -1.1270652, -8.1057686e-07, -1.1270652, -5.8931937, 1.4349978, -32.268337, 0.69859076)
 script = null
 
 [node name="Node3D" type="Node3D" parent="." unique_id=404046039]
