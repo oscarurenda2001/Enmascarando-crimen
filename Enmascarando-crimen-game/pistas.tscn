@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://booyrj4d1ep0u"]
+
+[ext_resource type="PackedScene" uid="uid://dn6ox18ppffet" path="res://psx__bloody_cleaver_knife/scene.gltf" id="1_bhij0"]
+[ext_resource type="Script" uid="uid://dncnqodtx8pdf" path="res://psx__bloody_cleaver_knife/scene.gd" id="2_qoyga"]
+[ext_resource type="PackedScene" uid="uid://cl3x5wfvaep7o" path="res://pbis_footsteps/scene.gltf" id="3_k8y3a"]
+[ext_resource type="Script" uid="uid://cll80ynx62uap" path="res://pbis_footsteps/scene.gd" id="4_3ot1j"]
+[ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="5_8ebyl"]
+[ext_resource type="Script" uid="uid://00xgnyq0ifgl" path="res://walter_white_lab_suit_bryan_cranston/scene.gd" id="6_4hx5x"]
+[ext_resource type="PackedScene" uid="uid://c2tmkuhd0ymcs" path="res://blood_spattered/scene.gltf" id="7_ujbs6"]
+[ext_resource type="Script" uid="uid://ccxwy8cso3jc" path="res://blood_spattered/scene.gd" id="8_8uxe4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q4tgb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhrdv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wql8n"]
+size = Vector3(0.001, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wdkp7"]
+size = Vector3(1, 1, 9)
+
+[node name="Pistas" type="Node3D" unique_id=1468579129]
+
+[node name="Cuchillo" parent="." unique_id=1458789603 instance=ExtResource("1_bhij0")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.05, 0, 0)
+script = ExtResource("2_qoyga")
+
+[node name="StaticCuchillo" type="StaticBody3D" parent="Cuchillo" unique_id=63446655]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionCuchillo" type="CollisionShape3D" parent="Cuchillo/StaticCuchillo" unique_id=1559269307]
+transform = Transform3D(0.27, 0, 0, 0, 0.08999997, 0, 0, 0, 0.45, -0.05, 0, 0)
+shape = SubResource("BoxShape3D_q4tgb")
+debug_fill = false
+
+[node name="Pisadas" parent="." unique_id=1925052010 instance=ExtResource("3_k8y3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0736595)
+script = ExtResource("4_3ot1j")
+
+[node name="StaticPisadas" type="StaticBody3D" parent="Pisadas" unique_id=1628679216]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionPisadas" type="CollisionShape3D" parent="Pisadas/StaticPisadas" unique_id=1581475193]
+transform = Transform3D(0.099999994, 0, 0, 0, 0.39599997, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_uhrdv")
+
+[node name="Cuerpo" parent="." unique_id=466469895 instance=ExtResource("5_8ebyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.3535624)
+script = ExtResource("6_4hx5x")
+
+[node name="StaticCuerpo" type="StaticBody3D" parent="Cuerpo" unique_id=1817921155]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionCuerpo" type="CollisionShape3D" parent="Cuerpo/StaticCuerpo" unique_id=1399189012]
+transform = Transform3D(-1950.782, -7.1054274e-15, 0, 0, 1.6499792, 0, 0, 0, 0.54, -0.9, 0, 0)
+shape = SubResource("BoxShape3D_wql8n")
+
+[node name="Sangre" parent="." unique_id=379822651 instance=ExtResource("7_ujbs6")]
+transform = Transform3D(0.09536893, 0, 0, 0, 0.028335989, 0, 0, 0, 0.106802255, -2.5774822, 0, 0)
+script = ExtResource("8_8uxe4")
+
+[node name="StaticSangre" type="StaticBody3D" parent="Sangre" unique_id=252734215]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionSangre" type="CollisionShape3D" parent="Sangre/StaticSangre" unique_id=382065878]
+transform = Transform3D(2.4696648, 2.7739588e-11, 0, 1.563194e-13, 15.626525, 0, 0, 0, 1.9799999, 2.2737368e-13, -3.0000038, 2.1899998)
+shape = SubResource("BoxShape3D_wdkp7")
