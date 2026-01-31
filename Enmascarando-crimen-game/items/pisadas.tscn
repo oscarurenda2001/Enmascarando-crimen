@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://cyhel0pvk6g0j"]
+[gd_scene format=3 uid="uid://dmbis5e76n5qs"]
 
+[ext_resource type="Script" uid="uid://bvr4scriu6cqi" path="res://items/pisadas.gd" id="1_7jl5p"]
 [ext_resource type="PackedScene" uid="uid://cl3x5wfvaep7o" path="res://pbis_footsteps/scene.gltf" id="1_uu88e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sg1ho"]
 
 [node name="Pisadas" type="Node3D" unique_id=972373460]
+script = ExtResource("1_7jl5p")
 
 [node name="PisadasScene" parent="." unique_id=1925052010 instance=ExtResource("1_uu88e")]
 
