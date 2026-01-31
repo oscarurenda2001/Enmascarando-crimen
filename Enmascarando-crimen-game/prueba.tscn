@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b0vcpv8r271r3"]
 
+[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_3plae"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="1_4c11n"]
 [ext_resource type="Script" uid="uid://yoquewhfjkpl" path="res://items/cuerpo.gd" id="1_8bjpd"]
 [ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="2_i2p14"]
 [ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="7_8bjpd"]
 [ext_resource type="PackedScene" uid="uid://dmbis5e76n5qs" path="res://items/pisadas.tscn" id="7_pel6o"]
 [ext_resource type="PackedScene" uid="uid://c15xv4gigd7qk" path="res://items/sangre.tscn" id="8_7i0ls"]
+[ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://escenas/GameManager/game_manager.tscn" id="9_rvi4t"]
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="10_2n4ld"]
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
@@ -22,6 +24,8 @@ material = SubResource("StandardMaterial3D_2xgey")
 [node name="Node3D" type="Node3D" unique_id=1875265199]
 script = ExtResource("1_8bjpd")
 puntuacion = 20
+
+[node name="UserUi2" parent="." unique_id=191796885 instance=ExtResource("1_3plae")]
 
 [node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("1_4c11n")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 3.959, 0, 0)
@@ -67,3 +71,7 @@ transform = Transform3D(9.495473, 0, 0, 0, 13.6638565, 0, 0, 0, 5.11209, -12.347
 
 [node name="Cuchillo" parent="." unique_id=2126203315 instance=ExtResource("10_2n4ld")]
 transform = Transform3D(117.00949, 0, 0, 0, -0.19026104, 61.940628, 0, -1.9770215, -5.9609313, 12.522591, 18.714512, 30.003742)
+
+[node name="GameManager" parent="." unique_id=2083256314 instance=ExtResource("9_rvi4t")]
+
+[connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]

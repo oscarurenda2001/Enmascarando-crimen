@@ -7,7 +7,6 @@ signal time_changed(time_left)
 signal level_won
 signal level_lost
 const SCENE_FINISH = "res://escenas/SceneFinish/EsceneFinish.tscn"
-var scene_finish_instance = preload(SCENE_FINISH).instantiate()
 
 var current_score: int = 0
 var time_left: int = 5
@@ -44,13 +43,6 @@ func end_game() -> void:
 	get_tree().change_scene_to_file(SCENE_FINISH)
 	if exit or time_left <= 0:
 		is_playing = false
-		
-		if current_score >= min_score:
-			win = true
-			emit_signal("level_won")
-		else:
-			win = false
-			emit_signal("level_lost")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

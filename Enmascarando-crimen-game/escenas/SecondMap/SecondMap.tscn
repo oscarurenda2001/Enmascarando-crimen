@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://escenas/SecondMap/Apartment.tscn" id="1_418ij"]
 [ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_o0apk"]
 [ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="2_58cga"]
-[ext_resource type="Script" uid="uid://bdoily064k7q8" path="res://ui/user_ui_2.gd" id="2_o0apk"]
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="3_ra3ui"]
 [ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="4_o0apk"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://escenas/GameManager/game_manager.tscn" id="5_o0apk"]
@@ -14,7 +13,6 @@ size = Vector3(1, 1, 0.63378906)
 [node name="SecondMap" type="Node3D" unique_id=419533099]
 
 [node name="UserUi2" parent="." unique_id=191796885 instance=ExtResource("1_o0apk")]
-script = ExtResource("2_o0apk")
 
 [node name="Apartment" parent="." unique_id=741552661 instance=ExtResource("1_418ij")]
 
