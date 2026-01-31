@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_bykjv"]
 [ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="2_yymgt"]
 [ext_resource type="PackedScene" uid="uid://s34se0lyo2sl" path="res://MainCharacter/sketchfab_scene.tscn" id="3_toywe"]
-[ext_resource type="AudioStream" uid="uid://d3ycxedrmjycv" path="res://sonidos/pasos-steps-40285.mp3" id="4_yymgt"]
+[ext_resource type="AudioStream" uid="uid://dxsma7nw6m1rd" path="res://sonidos/pasos-steps-40285.mp3" id="4_yymgt"]
 [ext_resource type="AudioStream" uid="uid://b8gwdpq7lf5ja" path="res://sonidos/item-swing-sfx-2-409076.mp3" id="5_toywe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71jk5"]

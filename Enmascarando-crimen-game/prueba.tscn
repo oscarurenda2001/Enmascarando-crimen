@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b0vcpv8r271r3"]
+[gd_scene format=3 uid="uid://dvk3ojax2ipqo"]
 
-[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_3plae"]
+[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="1_3plae"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="1_4c11n"]
 [ext_resource type="Script" uid="uid://yoquewhfjkpl" path="res://items/cuerpo.gd" id="1_8bjpd"]
 [ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="2_i2p14"]

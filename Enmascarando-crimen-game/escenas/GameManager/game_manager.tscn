@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://bvcq126cfdxh8"]
 
 [ext_resource type="Script" uid="uid://d33h26yrx3hn1" path="res://escenas/GameManager/game_manager.gd" id="1_d2p21"]
+[ext_resource type="AudioStream" uid="uid://cuot7hejnjvsh" path="res://sonidos/police-car-298078.mp3" id="2_u8wvy"]
 
 [node name="GameManager" type="Node" unique_id=2083256314]
 script = ExtResource("1_d2p21")
+time_left = 15
+max_time = 15
 
 [node name="Timer" type="Timer" parent="." unique_id=1744477105]
 autostart = true
+
+[node name="police" type="AudioStreamPlayer3D" parent="." unique_id=250387842]
+stream = ExtResource("2_u8wvy")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

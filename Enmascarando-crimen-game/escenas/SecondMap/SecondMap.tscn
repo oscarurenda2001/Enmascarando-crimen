@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://hvi5shastj80"]
 
 [ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://escenas/SecondMap/Apartment.tscn" id="1_418ij"]
-[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_o0apk"]
-[ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="2_58cga"]
-[ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="3_ra3ui"]
-[ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="4_o0apk"]
+[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="1_o0apk"]
+[ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="4_58cga"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://escenas/GameManager/game_manager.tscn" id="5_o0apk"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1qnun"]
-size = Vector3(1, 1, 0.63378906)
 
 [node name="SecondMap" type="Node3D" unique_id=419533099]
 
@@ -16,24 +11,8 @@ size = Vector3(1, 1, 0.63378906)
 
 [node name="Apartment" parent="." unique_id=741552661 instance=ExtResource("1_418ij")]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1223072431 node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.291391, 0)
-wall_min_slide_angle = 0.1972222
-script = ExtResource("2_58cga")
-camera = NodePath("Camera3D")
-
-[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=82949276]
-texture = ExtResource("3_ra3ui")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=503111408]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012499809, -0.20188558, 0.18310559)
-shape = SubResource("BoxShape3D_1qnun")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1389767596 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.022963502, -0.3422204, 1.0534981)
-script = ExtResource("4_o0apk")
-follow_target = NodePath("..")
-
 [node name="GameManager" parent="." unique_id=2083256314 instance=ExtResource("5_o0apk")]
+
+[node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("4_58cga")]
 
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]

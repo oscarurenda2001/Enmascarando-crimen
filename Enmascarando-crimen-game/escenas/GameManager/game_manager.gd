@@ -7,10 +7,10 @@ signal time_changed(time_left)
 signal level_won
 signal level_lost
 const SCENE_FINISH = "res://escenas/SceneFinish/EsceneFinish.tscn"
-
+@onready var police = $police
 var current_score: int = 0
-var time_left: int = 5
-var max_time: int = 5
+@export var time_left: int = 10
+@export var max_time: int = 10
 var is_playing: bool = false
 var exit: bool = false
 var win: bool = false
@@ -59,6 +59,9 @@ func _on_timer_timeout() -> void:
 	if time_left > 0:
 		time_left = time_left -1
 	if time_left<= 0:
+		police.stop()
 		end_game()
+	if time_left < 10 and !police.playing:
+		police.play()
 	
 	time_changed.emit(time_left)
