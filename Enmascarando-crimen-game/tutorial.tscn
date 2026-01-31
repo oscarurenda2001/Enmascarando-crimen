@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="5_tvjhf"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="6_vmw6g"]
 [ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="7_4hjyh"]
+[ext_resource type="PackedScene" uid="uid://b1m7ey8cfmov7" path="res://ui/indicaciones.tscn" id="8_4t6hg"]
+[ext_resource type="PackedScene" uid="uid://dp5mpqtxmf2j0" path="res://ui/report.tscn" id="9_7vrqn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
 albedo_texture = ExtResource("5_tvjhf")
@@ -51,3 +53,7 @@ light_color = Color(0.57861936, 0.53164613, 0.4669059, 1)
 
 [node name="Cuerpo" parent="." unique_id=344555295 instance=ExtResource("7_4hjyh")]
 transform = Transform3D(21.260519, 0, 0, 0, 17.718506, 0, 0, 0, 21.348305, -38.142754, 0, 2.3215828)
+
+[node name="Indicaciones" parent="." unique_id=454857065 instance=ExtResource("8_4t6hg")]
+
+[node name="Report" parent="." unique_id=1825815602 instance=ExtResource("9_7vrqn")]

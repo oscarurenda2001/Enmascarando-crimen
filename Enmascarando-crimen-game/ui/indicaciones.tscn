@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b1m7ey8cfmov7"]
+
+[sub_resource type="Theme" id="Theme_hbfp4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbfp4"]
+bg_color = Color(0.21176471, 0.21176471, 0.21176471, 0.7529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vvvo"]
+bg_color = Color(0.04395192, 0.043951936, 0.043951876, 1)
+
+[node name="Indicaciones" type="Control" unique_id=454857065]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 522.0
+offset_right = 1.0
+offset_bottom = 522.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=605251628]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 125.0
+color = Color(0, 0, 0, 0.42745098)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1111196269]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 30.0
+offset_right = 1075.0
+offset_bottom = 110.0
+theme = SubResource("Theme_hbfp4")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_hbfp4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3vvvo")
+text = "Estás en la escena de un crimen. Pulsa click izquierdo para interactuar con los objetos y wasd para moverte. Pulsa C para ver el archivo del caso."
