@@ -19,5 +19,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_click(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	print("cuchi")
+func clicked() -> void:
+	print("hudf")

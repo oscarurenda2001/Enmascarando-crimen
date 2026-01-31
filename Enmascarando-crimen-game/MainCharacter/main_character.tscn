@@ -9,6 +9,7 @@ size = Vector3(0.3963623, 0.75476074, 0.24633789)
 
 [node name="MainCharacter" type="CharacterBody3D" unique_id=2100516768 node_paths=PackedStringArray("camera", "arms")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+collision_layer = 2
 script = ExtResource("1_bykjv")
 camera = NodePath("Camera3D")
 arms = NodePath("Camera3D/Brazos")
@@ -17,11 +18,14 @@ arms = NodePath("Camera3D/Brazos")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025874258, 0.37738037, 0.031510737)
 shape = SubResource("BoxShape3D_71jk5")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1676152124 node_paths=PackedStringArray("follow_target")]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1676152124 node_paths=PackedStringArray("follow_target", "rayo")]
 transform = Transform3D(-0.025, 0, -2.1855695e-09, 0, 0.025, 0, 2.1855695e-09, 0, -0.025, 0.03587985, 0.68429613, -0.163146)
 fov = 73.125
 script = ExtResource("2_yymgt")
 follow_target = NodePath("..")
+rayo = NodePath("RayCast3D")
 
 [node name="Brazos" parent="Camera3D" unique_id=660299199 instance=ExtResource("3_toywe")]
 transform = Transform3D(-9.27192, 9.853118e-08, 5.1519936e-07, 1.6470239e-14, 5.8931937, -1.1270652, -8.1057686e-07, -1.1270652, -5.8931937, 1.4349978, -32.268337, 0.69859076)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=962559627]
