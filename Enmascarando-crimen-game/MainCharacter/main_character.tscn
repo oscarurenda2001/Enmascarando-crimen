@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://s34se0lyo2sl" path="res://MainCharacter/sketchfab_scene.tscn" id="3_toywe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71jk5"]
-size = Vector3(1, 1, 0.63378906)
+size = Vector3(0.3963623, 0.75476074, 0.24633789)
 
 [node name="MainCharacter" type="CharacterBody3D" unique_id=2100516768 node_paths=PackedStringArray("camera", "arms")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
@@ -14,7 +14,7 @@ camera = NodePath("Camera3D")
 arms = NodePath("Camera3D/Brazos")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=240246079]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, 0.5, 0.183)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025874258, 0.37738037, 0.031510737)
 shape = SubResource("BoxShape3D_71jk5")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1676152124 node_paths=PackedStringArray("follow_target")]
