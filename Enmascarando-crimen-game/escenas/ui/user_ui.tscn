@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tc7w1uujoaeb"]
 
 [ext_resource type="Texture2D" uid="uid://b21ys1m5b2hjy" path="res://addons/Arts/godot-prototype-texture/back.png" id="1_mtdm2"]
-[ext_resource type="Script" uid="uid://dper7uy5ki13f" path="res://ui/canvas_layer.gd" id="1_xk8hf"]
+[ext_resource type="Script" uid="uid://dper7uy5ki13f" path="res://escenas/ui/canvas_layer.gd" id="1_xk8hf"]
 
 [node name="UserUi" type="Control" unique_id=150837490]
 layout_mode = 3
