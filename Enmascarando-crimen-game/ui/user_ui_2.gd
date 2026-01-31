@@ -1,14 +1,7 @@
-extends Node3D
-@export var puntuacion: int = 10
-@export var sprite: Node
-var is_colected: bool = false
+extends CanvasLayer
 
-func interact():
-	if(is_colected):
-		return
-	is_colected = true
-	emit_signal("Puntuacion",puntuacion)
-	
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -19,5 +12,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func clicked() -> void:
-	print("hudf")
+func game_over():
+	print("Has perdido")
+
+
+func _on_game_manager_time_changed(time_left: Variant) -> void:
+	$TextureRect/Label_tiempo.text = str(time_left)

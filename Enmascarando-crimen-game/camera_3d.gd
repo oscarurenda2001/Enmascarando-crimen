@@ -3,6 +3,8 @@ extends Camera3D
 @export var follow_target: Node3D
 @export var ray_length: float = 100.0  # distancia del raycast
 var items = ['StaticCuerpo','StaticSangre','StaticCuchillo','StaticPisada']
+@export var rayo: RayCast3D
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -25,3 +27,7 @@ func _process(delta: float) -> void:
 		var collider = result.collider
 		if(result.collider.name in items):
 			print(collider.name)
+	if Input.is_action_just_pressed("click"):
+		if rayo.is_colliding():
+			var obj = rayo.get_collider()
+			obj.clicked()
