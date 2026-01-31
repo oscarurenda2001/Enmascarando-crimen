@@ -1107,6 +1107,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m10af")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_caauc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_caauc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xgey"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
 albedo_texture = ExtResource("30_caauc")
 
@@ -1126,7 +1132,7 @@ camera = NodePath("Camera3D")
 texture = ExtResource("1_71jk5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1890306967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008666992, 0, -1.7473145)
+transform = Transform3D(0.2120338, 0, 0, 0, 1, 0, 0, 0, 0.054515626, 0.008667, 0, -0.005788994)
 shape = SubResource("BoxShape3D_mt5rx")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=892204335 node_paths=PackedStringArray("follow_target")]
@@ -1222,6 +1228,31 @@ mesh = SubResource("ArrayMesh_havl0")
 
 [node name="BackSide_6" type="MeshInstance3D" parent="Node3D/skpC622__USDInstance_1" unique_id=539769110]
 mesh = SubResource("ArrayMesh_s814w")
+
+[node name="CollisionBoxes" type="Node3D" parent="Node3D" unique_id=1008778689]
+
+[node name="Bed" type="RigidBody3D" parent="Node3D/CollisionBoxes" unique_id=225070401]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CollisionBoxes/Bed" unique_id=726786826]
+transform = Transform3D(19.327703, 0, 0, 0, 7.613861, 0, 0, 0, 43.53325, 4.4744053, 9.553101, -37.43148)
+shape = SubResource("BoxShape3D_caauc")
+debug_color = Color(0.8901961, 0.3254902, 0, 1)
+
+[node name="Bed2" type="RigidBody3D" parent="Node3D/CollisionBoxes" unique_id=465651613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.710201, 3.2684174, -14.992096)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CollisionBoxes/Bed2" unique_id=578170266]
+transform = Transform3D(25.273455, 0, 0, 0, 7.613862, 0, 0, 0, 49.746902, 13.419197, 5.9455776, -24.10495)
+shape = SubResource("BoxShape3D_caauc")
+debug_color = Color(0.8901961, 0.3254902, 0, 1)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Node3D/CollisionBoxes" unique_id=1673941551]
+physics_material_override = SubResource("PhysicsMaterial_caauc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CollisionBoxes/RigidBody3D" unique_id=1629093349]
+transform = Transform3D(16.680227, 0, -11.753117, 0, 5.638333, 0, 7.418146, 0, 26.427727, -42.677246, 9.311362, -17.879572)
+shape = SubResource("BoxShape3D_2xgey")
+debug_color = Color(0.59607846, 0.54509807, 0, 1)
 
 [node name="Sketchfab_Scene" parent="." unique_id=1124555258 instance=ExtResource("29_3tmio")]
 transform = Transform3D(25, 0, 0, 0, -1.0927847e-06, 25, 0, -25, -1.0927847e-06, 72.14849, 3.1908646, -15.084223)
