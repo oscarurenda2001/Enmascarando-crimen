@@ -1,13 +1,14 @@
 extends CharacterBody3D
 
 @export var camera: Node3D
+@export var arms : Node3D
 
 var count := 0
 var yaw := 0.0
 var pitch := 0.0
 const PITCH_MIN := deg_to_rad(-60)
 const PITCH_MAX := deg_to_rad(60)
-const SENS := 0.008
+const SENS := 0.01
 const SPEED = 15.0
 const JUMP_VELOCITY = 4.5
 
@@ -20,6 +21,9 @@ func _input(event):
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	camera.rotation = Vector3(pitch, yaw, 0.0)
+	camera.position = Vector3(0, 1, 0.5)
+	arms.rotation = Vector3(pitch, yaw, 0.0)
+	#arms.position = Vector3(-sin(yaw), 0, -cos(yaw))
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -32,9 +36,12 @@ func _physics_process(delta: float) -> void:
 		velocity.z = -cos(yaw) * SPEED
 		if count % 2 and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	#arms.position.z += 2
+	#arms.position.x += 2
+
 	count += 1
 	move_and_slide()
