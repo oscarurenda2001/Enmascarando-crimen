@@ -18,7 +18,7 @@ func _pick_something():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_key_pressed(KEY_SPACE):
+	if Input.is_action_pressed('click'):
 		_pick_something()
 		await animation_player.animation_finished
 		start_animation()

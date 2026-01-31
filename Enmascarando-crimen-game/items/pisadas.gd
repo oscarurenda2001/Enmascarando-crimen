@@ -2,12 +2,13 @@ extends Node3D
 @export var puntuacion: int = 5
 @export var sprite: Node
 var is_colected: bool = false
+var ObjName: String = "Pisadas"
 
-func interact():
-	if(is_colected):
-		return
-	is_colected = true
-	emit_signal("Puntuacion",puntuacion)
+func interact(obj):
+	if(obj == self):
+		#GameManager.add_game_score(puntuacion)
+		print(ObjName)
+		queue_free()
 	
 func _input_event():
 		GameManager.add_game_score(puntuacion)
