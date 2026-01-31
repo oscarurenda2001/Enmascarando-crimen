@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bvcq126cfdxh8"]
+
+[ext_resource type="Script" uid="uid://d33h26yrx3hn1" path="res://escenas/GameManager/game_manager.gd" id="1_d2p21"]
+
+[node name="GameManager" type="Node" unique_id=2083256314]
+script = ExtResource("1_d2p21")
+
+[node name="Timer" type="Timer" parent="." unique_id=1744477105]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
