@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b0vcpv8r271r3"]
+[gd_scene format=4 uid="uid://dvk3ojax2ipqo"]
 
 [ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_mt5rx"]
 [ext_resource type="PackedScene" uid="uid://s34se0lyo2sl" path="res://MainCharacter/sketchfab_scene.tscn" id="3_caauc"]
@@ -1128,13 +1128,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, 0.5, 0.183)
 shape = SubResource("BoxShape3D_71jk5")
 
 [node name="Camera3D" type="Camera3D" parent="MainCharacter" unique_id=892204335 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(-0.023366416, -0.0046617105, 0.0075682946, -0.0057242448, 0.024176346, -0.002781599, -0.006800268, -0.0043327506, -0.023663973, 0.03566976, -0.2926126, 0.30769297)
+transform = Transform3D(-0.025, 0, -2.1855695e-09, 0, 0.025, 0, 2.1855695e-09, 0, -0.025, 0.03587985, 0.68429613, -0.163146)
 fov = 73.125
 script = ExtResource("4_i5a71")
 follow_target = NodePath("..")
 
 [node name="Brazos" parent="MainCharacter/Camera3D" unique_id=660299199 instance=ExtResource("3_caauc")]
-transform = Transform3D(-6, 0, -5.2453663e-07, 0, 6.0000005, 0, 5.2453663e-07, 0, -5.9999995, 1.5, -27, -6)
+transform = Transform3D(-9.27192, 9.853118e-08, 5.1519936e-07, 1.6470239e-14, 5.8931937, -1.1270652, -8.1057686e-07, -1.1270652, -5.8931937, 1.4349978, -32.268337, 0.69859076)
+script = null
 
 [node name="Node3D" type="Node3D" parent="." unique_id=404046039]
 
