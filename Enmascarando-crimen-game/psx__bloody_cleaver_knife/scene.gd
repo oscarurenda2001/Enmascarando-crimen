@@ -1,6 +1,8 @@
 extends Node3D
-@export var puntuacion: int = 10
-
+@export var puntuacion: int = 5
+@export var sprite: Node
+func interact():
+	emit_signal("Puntuacion",puntuacion)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
