@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://b0vcpv8r271r3"]
 
-[ext_resource type="Script" uid="uid://br7c8ob8l6yi8" path="res://items/sangre.gd" id="1_3plae"]
-[ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="1_4c11n"]
-[ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="2_i2p14"]
-[ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="7_8bjpd"]
-[ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
-[ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
-[ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="31_caauc"]
+[ext_resource type="Script" uid="uid://br7c8ob8l6yi8" path="res://items/sangre.gd" id="1_0cr88"]
+[ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="2_4t6hg"]
+[ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="3_7vrqn"]
+[ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="4_bhfnd"]
+[ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="5_tvjhf"]
+[ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="6_vmw6g"]
+[ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="7_4hjyh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
-albedo_texture = ExtResource("30_caauc")
+albedo_texture = ExtResource("5_tvjhf")
 
 [sub_resource type="BoxMesh" id="BoxMesh_a0yig"]
 material = SubResource("StandardMaterial3D_2xgey")
@@ -17,14 +17,14 @@ material = SubResource("StandardMaterial3D_2xgey")
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0yig"]
 
 [node name="Node3D" type="Node3D" unique_id=1875265199]
-script = ExtResource("1_3plae")
+script = ExtResource("1_0cr88")
 
-[node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("1_4c11n")]
+[node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("2_4t6hg")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 3.959, 0, 0)
 
-[node name="Nivel1" parent="." unique_id=1495978626 instance=ExtResource("2_i2p14")]
+[node name="Nivel1" parent="." unique_id=1495978626 instance=ExtResource("3_7vrqn")]
 
-[node name="Sketchfab_Scene" parent="." unique_id=1124555258 instance=ExtResource("29_3tmio")]
+[node name="Sketchfab_Scene" parent="." unique_id=1124555258 instance=ExtResource("4_bhfnd")]
 transform = Transform3D(25, 0, 0, 0, -1.0927847e-06, 25, 0, -25, -1.0927847e-06, 72.14849, 3.1908646, -15.084223)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene" unique_id=1197223840]
@@ -42,12 +42,12 @@ shape = SubResource("BoxShape3D_a0yig")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=371835214]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="Sketchfab_Scene" parent="StaticBody3D" unique_id=417288104 instance=ExtResource("31_caauc")]
+[node name="Sketchfab_Scene" parent="StaticBody3D" unique_id=417288104 instance=ExtResource("6_vmw6g")]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999995, 2.4029155, 0.31908426, -0.66584885)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1360480903]
 transform = Transform3D(1, 0, 0, 0, 1, -2.6765843e-15, 0, 2.6765843e-15, 1, 0.18157196, 65.78311, -9.536743e-07)
 light_color = Color(0.57861936, 0.53164613, 0.4669059, 1)
 
-[node name="Cuerpo" parent="." unique_id=344555295 instance=ExtResource("7_8bjpd")]
+[node name="Cuerpo" parent="." unique_id=344555295 instance=ExtResource("7_4hjyh")]
 transform = Transform3D(21.260519, 0, 0, 0, 17.718506, 0, 0, 0, 21.348305, -38.142754, 0, 2.3215828)
