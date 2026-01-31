@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bakual44paff4"]
+
+[ext_resource type="Script" uid="uid://dsejv0nfdscyc" path="res://MainCharacter/sketchfab_scene.gd" id="1_ul7a6"]
+[ext_resource type="PackedScene" uid="uid://s34se0lyo2sl" path="res://MainCharacter/sketchfab_scene.tscn" id="2_lcomy"]
+
+[node name="BrazosProtagonista" type="Node3D" unique_id=214425261]
+visible = false
+script = ExtResource("1_ul7a6")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1787383178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0.122464195, 4.0114613, -0.83065593)
+
+[node name="Sketchfab_Scene" parent="." unique_id=660299199 instance=ExtResource("2_lcomy")]
+transform = Transform3D(11, 0, 0, 0, 10.884784, -1.587918, 0, 1.587918, 10.884784, 0, 0, 0)
