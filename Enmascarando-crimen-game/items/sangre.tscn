@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bm26o1j0dt1eg"]
+
+[ext_resource type="PackedScene" uid="uid://c2tmkuhd0ymcs" path="res://blood_spattered/scene.gltf" id="1_6qmt4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nh27l"]
+size = Vector3(2, 1, 5)
+
+[node name="Sangre" type="Node3D" unique_id=1374897713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -0.1)
+
+[node name="SangreScene" parent="." unique_id=379822651 instance=ExtResource("1_6qmt4")]
+transform = Transform3D(0.0256, 0, 0, 0, 0.011999995, 0, 0, 0, 0.02999999, 0, 0, 0)
+
+[node name="StaticSangre" type="StaticBody3D" parent="SangreScene" unique_id=2117877820]
+
+[node name="CollisionSangre" type="CollisionShape3D" parent="SangreScene/StaticSangre" unique_id=7383051]
+transform = Transform3D(7.2600007, 0, 0, 0, 1.5000004, 0, 0, 0, 3.4000006, -2.9999998, 0, 2.1999998)
+shape = SubResource("BoxShape3D_nh27l")
