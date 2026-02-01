@@ -46,6 +46,9 @@ func end_game() -> void:
 	if exit or time_left <= 0:
 		is_playing = false
 		
+func showMessageItem(msg: String, actions: Array[Dictionary]) -> void:
+	get_tree().current_scene.find_child("ItemAction").set_actions(msg, actions)
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("report"):
 		if isReport:
@@ -58,7 +61,6 @@ func _input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("bueno")
 	start_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,7 +69,6 @@ func _process(delta: float) -> void:
 		return
 
 func _on_timer_timeout() -> void:
-	print('entra')
 	if time_left > 0:
 		time_left = time_left -1
 	if time_left<= 0:

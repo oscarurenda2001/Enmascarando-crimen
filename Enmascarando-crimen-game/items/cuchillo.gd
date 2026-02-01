@@ -1,7 +1,4 @@
-extends Node3D
-@export var puntuacion: int = 10
-@export var sprite: Node
-var ObjName: String = "Cuchillo"
+extends GeneralObject
 
 func interact(obj):
 	if(obj == self):
