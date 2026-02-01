@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="3_417ge"]
 [ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="4_vfwod"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="7_1b2e6"]
-[ext_resource type="PackedScene" uid="uid://dmbis5e76n5qs" path="res://items/pisadas.tscn" id="8_r7qbo"]
+[ext_resource type="PackedScene" uid="uid://cyhel0pvk6g0j" path="res://items/pisadas.tscn" id="8_r7qbo"]
 [ext_resource type="PackedScene" uid="uid://bm26o1j0dt1eg" path="res://items/sangre.tscn" id="9_g2ved"]
 [ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="10_mhfj7"]
 [ext_resource type="PackedScene" uid="uid://b1m7ey8cfmov7" path="res://ui/indicaciones.tscn" id="11_m63tb"]
@@ -82,8 +82,6 @@ modulate = Color(1, 1, 1, 0)
 transform = Transform3D(7.1295013, 0, -13.268893, 0, -19.264, 0, -12.348658, 0, -7.6608, 40, 9, -9)
 puntuacion = 30
 
-[connection signal="disapear" from="StaticBody3D/Pisadas" to="StaticBody3D/Pisadas" method="_on_disapear"]
-[connection signal="disapear" from="StaticBody3D/Sangre" to="StaticBody3D/Sangre" method="_on_disapear"]
 [connection signal="close_report" from="GameManager" to="Report" method="_on_close_report"]
 [connection signal="open_report" from="GameManager" to="Report" method="_on_open_report"]
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]

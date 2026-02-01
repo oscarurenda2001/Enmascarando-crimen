@@ -18,18 +18,10 @@ func interact(obj):
 		GameManager.showMessageItem(msg, actions)
 		print("name: ", objName)
 	
-func _on_disapear():
+func delete_object():
 	GameManager.add_game_score(puntuacion)
 	print(objName)
-	if(objName == "Sangre" or objName == "Pisadas"):
-		var tween = get_tree().create_tween()
-		tween.set_parallel(false)
-		print(self)
-		tween.tween_property(self, "scale", Vector3(0,0,0), 1)
-		await tween.finished
-		queue_free()
-	else:
-		queue_free()
+	queue_free()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

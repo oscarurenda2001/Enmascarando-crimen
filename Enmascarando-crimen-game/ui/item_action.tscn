@@ -8,6 +8,11 @@ bg_color = Color(0.05490196, 0.05490196, 0.05490196, 0.5019608)
 
 [sub_resource type="Theme" id="Theme_2qiiv"]
 
+[sub_resource type="Theme" id="Theme_2qiiv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3iwb"]
+bg_color = Color(0, 0, 0, 0.37254903)
+
 [node name="ItemAction" type="Control" unique_id=570807068]
 layout_mode = 3
 anchors_preset = 15
@@ -17,18 +22,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2qiiv")
 
-[node name="Panel" type="Panel" parent="." unique_id=1301659892]
-layout_mode = 0
-offset_top = 327.0
-offset_right = 1150.0
-offset_bottom = 327.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2qiiv")
-script = ExtResource("2_g3iwb")
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1077150083]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=905334106]
-layout_mode = 0
-offset_top = -327.0
-offset_right = 1150.0
-offset_bottom = 323.0
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1035669615]
+layout_mode = 2
 theme = SubResource("Theme_2qiiv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3iwb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=905334106]
+layout_mode = 2
+size_flags_horizontal = 4
 alignment = 1
