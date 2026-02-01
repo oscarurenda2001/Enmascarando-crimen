@@ -16,11 +16,20 @@ func set_variables(objName: String, puntuacion: int, msg: String, actions: Array
 func interact(obj):
 	if(obj == self && enable):
 		GameManager.showMessageItem(msg, actions)
-		print("name: ", objName)
+		#print("name: ", objName)
 	
 func _on_disapear():
 	GameManager.add_game_score(puntuacion)
-	queue_free()
+	print(objName)
+	if(objName == "Sangre" or objName == "Pisadas"):
+		var tween = get_tree().create_tween()
+		tween.set_parallel(false)
+		print(self)
+		tween.tween_property(self, "scale", Vector3(0,0,0), 1)
+		await tween.finished
+		queue_free()
+	else:
+		queue_free()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
