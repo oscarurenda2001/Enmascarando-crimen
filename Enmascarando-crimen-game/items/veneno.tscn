@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3a63exsdp5v6"]
+
+[ext_resource type="Script" uid="uid://d4gsxohs0o3da" path="res://items/veneno.gd" id="1_cao73"]
+[ext_resource type="PackedScene" uid="uid://dr1vtl8hv3y2d" path="res://poison-potion-with-skull-stylized/source/potion/poison_bottle2.gltf" id="1_w37lh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cao73"]
+height = 7.25
+
+[node name="Veneno" type="Node3D" unique_id=1985531365]
+script = ExtResource("1_cao73")
+
+[node name="Veneno_scene" parent="." unique_id=602042856 instance=ExtResource("1_w37lh")]
+
+[node name="StaticVeneno" type="StaticBody3D" parent="Veneno_scene" unique_id=967877910]
+
+[node name="CollisionVeneno" type="CollisionShape3D" parent="Veneno_scene/StaticVeneno" unique_id=1830226372]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4.29, 0, 3.875, 0)
+shape = SubResource("CylinderShape3D_cao73")

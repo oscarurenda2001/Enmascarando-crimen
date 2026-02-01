@@ -17,7 +17,7 @@ var current_score: int = 0
 var is_playing: bool = false
 var exit: bool = false
 var win: bool = false
-var min_score: int = 100
+@export var min_score: int = 100
 var finalScore: int = 0
 var lvl = 1
 var lastLvl = 2
@@ -47,8 +47,8 @@ func end_game() -> void:
 	
 	if exit or time_left <= 0:
 		is_playing = false
-		
-	GameManager.finalScore = current_score
+		GameManager.finalScore = current_score
+		current_score = 0
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file(SCENE_FINISH)
 	
