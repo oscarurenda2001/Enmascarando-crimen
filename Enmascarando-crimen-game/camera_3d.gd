@@ -2,7 +2,7 @@ extends Camera3D
 
 @export var follow_target: Node3D
 @export var ray_length: float = 100.0  # distancia del raycast
-var items = ['StaticCuerpo','StaticSangre','StaticCuchillo','StaticPisada']
+var items = ['StaticCuerpo','StaticSangre','StaticCuchillo','StaticPisada','StaticPuerta']
 
 func check_if_object():
 	var space_state = get_world_3d().direct_space_state

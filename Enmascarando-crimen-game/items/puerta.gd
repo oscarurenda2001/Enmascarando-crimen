@@ -9,7 +9,6 @@ func interact(obj):
 		#GameManager.add_game_score(puntuacion)
 		print(ObjName)
 		GameManager.exit = true
-		GameManager.end_game()
 	
 func _input_event():
 		GameManager.add_game_score(puntuacion)
