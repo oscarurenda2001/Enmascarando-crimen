@@ -11,8 +11,8 @@ var pitch := 0.0
 const PITCH_MIN := deg_to_rad(-60)
 const PITCH_MAX := deg_to_rad(60)
 const SENS := 0.01
-const SPEED = 15.0
-const JUMP_VELOCITY = 4.5
+@export var SPEED = 15.0
+@export var JUMP_VELOCITY = 4.5
 
 	
 func _input(event):

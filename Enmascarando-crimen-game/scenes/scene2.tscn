@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hvi5shastj80"]
 
 [ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://scenes/SecondMap/Apartment.tscn" id="1_418ij"]
-[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_o0apk"]
+[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="1_o0apk"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="4_58cga"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="5_o0apk"]
 
@@ -10,9 +10,15 @@
 [node name="UserUi2" parent="." unique_id=191796885 instance=ExtResource("1_o0apk")]
 
 [node name="Apartment" parent="." unique_id=741552661 instance=ExtResource("1_418ij")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="GameManager" parent="." unique_id=2083256314 instance=ExtResource("5_o0apk")]
+time_left = 10
+max_time = 10
 
 [node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("4_58cga")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -116.55847, 20.233543, -107.594604)
+SPEED = 45.0
+JUMP_VELOCITY = 10.0
 
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]

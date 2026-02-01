@@ -16,10 +16,13 @@ size = Vector3(1150.9901, 1643.0001, 37.180267)
 
 [node name="Sketchfab_Scene" unique_id=741552661 instance=ExtResource("1_th03a")]
 
-[node name="skpC0CF__USDInstance_1" parent="Sketchfab_model/USDRoot/model/Geom" parent_id_path=PackedInt32Array(378695856) index="0" unique_id=2120451851]
+[node name="Sketchfab_model" parent="." index="0" unique_id=1975978991]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 10, 0, -10, -4.371139e-07, 0, 0, 0)
+
+[node name="skpC0CF__USDInstance_1" parent="Sketchfab_model/USDRoot/model/Geom" parent_id_path=PackedInt32Array(1183494267) index="0" unique_id=612619434]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="FrontSide_0" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1" index="0" unique_id=736298820]
+[node name="FrontSide_0" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1" index="0" unique_id=1043020790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5563488, 1.0681152, 9.536743e-05)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_0" index="0" unique_id=1409513981]
@@ -27,22 +30,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5563488, 1.0681152, 9.53674
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_0/StaticBody3D" index="0" unique_id=1224209235]
 shape = SubResource("ConcavePolygonShape3D_th03a")
 
-[node name="FrontSide_1" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1" index="1" unique_id=1398973112]
+[node name="FrontSide_1" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1" index="1" unique_id=324255538]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_3" parent_id_path=PackedInt32Array(980926201) index="0" unique_id=1648315724]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_3" parent_id_path=PackedInt32Array(1596965762) index="0" unique_id=1648315724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 576.03503, -639.40497, -44.080105)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_3/StaticBody3D" index="0" unique_id=451775494]
 shape = SubResource("BoxShape3D_ny4n5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_4" parent_id_path=PackedInt32Array(436101959) index="0" unique_id=1171906787]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_4" parent_id_path=PackedInt32Array(471530523) index="0" unique_id=1171906787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 485.35, 127.97504, -25.339977)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_4/StaticBody3D" index="0" unique_id=1220929927]
 shape = SubResource("BoxShape3D_hfbiu")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_8" parent_id_path=PackedInt32Array(563608112) index="0" unique_id=2076020377]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_8" parent_id_path=PackedInt32Array(2040985377) index="0" unique_id=2076020377]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.87506, 29.420044, -32.189995)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/USDRoot/model/Geom/skpC0CF__USDInstance_1/FrontSide_8/StaticBody3D" index="0" unique_id=2010821831]

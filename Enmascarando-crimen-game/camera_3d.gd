@@ -27,16 +27,13 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta: float) -> void:
+	set_up_camera()
+	
+func set_up_camera():
 	var y_value = 0
 	if GameManager.lvl == 1:
 		y_value = 30
 	if GameManager.lvl == 2:
-		y_value = 0
+		y_value = 30
 		
-	global_position = follow_target.global_position + Vector3(0, y_value, 0)
-
-	if Input.is_action_just_pressed("click"):
-		if rayo.is_colliding():
-			grab.play()
-			var obj = rayo.get_collider()
-			obj.clicked()
+	global_position = follow_target.global_position + Vector3(0, y_value, 0)	
