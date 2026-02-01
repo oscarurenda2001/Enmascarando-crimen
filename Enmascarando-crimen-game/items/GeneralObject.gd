@@ -16,7 +16,7 @@ func set_variables(objName: String, puntuacion: int, msg: String, actions: Array
 func interact(obj):
 	if(obj == self && enable):
 		GameManager.showMessageItem(msg, actions)
-		#print("name: ", objName)
+		print("name: ", objName)
 	
 func _on_disapear():
 	GameManager.add_game_score(puntuacion)
