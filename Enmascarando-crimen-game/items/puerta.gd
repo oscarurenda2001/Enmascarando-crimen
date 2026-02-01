@@ -15,5 +15,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_exit():
+	print("cuando sales isplaying es ",GameManager.is_playing)
 	GameManager.exit = true
 	print("print puerta")

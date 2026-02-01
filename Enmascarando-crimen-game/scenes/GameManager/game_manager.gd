@@ -42,7 +42,6 @@ func add_game_score(score: int) -> void:
 	emit_signal("change_score", current_score)
 
 func end_game() -> void:
-	print("en game manager exit es:",exit)
 	if not is_playing:
 		return 
 	
