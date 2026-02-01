@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bixsnusv8ucp8"]
+
+[ext_resource type="Texture2D" uid="uid://dotoup58qo7qs" path="res://casos/cliente.png" id="1_hyj55"]
+[ext_resource type="Theme" uid="uid://tfjquu1rvrns" path="res://themes/reportTheme.tres" id="2_b4ior"]
+[ext_resource type="Script" uid="uid://dvtwu73x3d0vs" path="res://casos/clientText.gd" id="3_whvdk"]
+
+[node name="Cliente" type="Node2D" unique_id=1856350889]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=189119325]
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 38.0
+scale = Vector2(28.84, 16.6)
+color = Color(0.105882354, 0.09411765, 0.078431375, 1)
+
+[node name="Cliente" type="Sprite2D" parent="." unique_id=1817463842]
+position = Vector2(900, 323)
+scale = Vector2(0.421, 0.421)
+texture = ExtResource("1_hyj55")
+
+[node name="Content" type="RichTextLabel" parent="." unique_id=1538411754]
+offset_left = 40.0
+offset_top = 35.0
+offset_right = 640.0
+offset_bottom = 607.0
+theme = ExtResource("2_b4ior")
+bbcode_enabled = true
+text = "Lo perseguía la mafia. Querían torturarlo para obtener información confidencial. Me dijo que lo matara para evitar su sufrimiento y que no sintiera la tentación de decir nada.
+
+Lo he matado con un cuchillo, debería estar cerca de la chimenea.
+
+Cogí los documentos de detrás del cuadro, pero me he dado cuenta que falta una hoja. Supongo que con las prisas se me cayó."
+fit_content = true
+vertical_alignment = 1
+threaded = true
+script = ExtResource("3_whvdk")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1372243560]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 170.0
+offset_bottom = 60.0
+theme = ExtResource("2_b4ior")
+theme_override_font_sizes/normal_font_size = 35
+text = "Caso 1"

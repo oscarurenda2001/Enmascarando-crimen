@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dp5mpqtxmf2j0"]
+
+[ext_resource type="PackedScene" uid="uid://ds6rc5656w3tu" path="res://ui/report/scene.gltf" id="1_gpdxo"]
+[ext_resource type="Script" uid="uid://c4vb2bhpm115v" path="res://ui/sub_viewport_container.gd" id="1_l7t0l"]
+
+[node name="Report" type="Control" unique_id=1825815602]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1955356599 node_paths=PackedStringArray("ligth")]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 4.0
+offset_right = 1532.0
+offset_bottom = 516.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_l7t0l")
+ligth = NodePath("SubViewport/Sketchfab_Scene/DirectionalLight3D")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1766531853]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Sketchfab_Scene" parent="SubViewportContainer/SubViewport" unique_id=1450159794 instance=ExtResource("1_gpdxo")]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Sketchfab_Scene" unique_id=1382513868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.28636128)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Sketchfab_Scene" unique_id=562184894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.32063204)
+light_energy = 0.8
+
+[connection signal="focus_entered" from="SubViewportContainer" to="SubViewportContainer" method="_on_focus_entered"]
