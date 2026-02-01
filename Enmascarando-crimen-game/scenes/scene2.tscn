@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hvi5shastj80"]
 
 [ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://scenes/SecondMap/Apartment.tscn" id="1_418ij"]
-[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="1_o0apk"]
+[ext_resource type="PackedScene" uid="uid://bi2d6n7yuksjr" path="res://ui/user_ui2.tscn" id="1_o0apk"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="4_58cga"]
 [ext_resource type="PackedScene" uid="uid://c0lxl4asha171" path="res://items/puerta.tscn" id="5_6d61i"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="5_o0apk"]
@@ -22,9 +22,8 @@
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0072155, -1.2771263, -0.07056236)
 
 [node name="GameManager" parent="." unique_id=2083256314 instance=ExtResource("5_o0apk")]
-time_left = 90
-max_time = 90
-min_score = 80
+time_left = 100
+max_time = 100
 
 [node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("4_58cga")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -40.639, 3, -69)
@@ -33,18 +32,20 @@ JUMP_VELOCITY = 10.0
 
 [node name="Pisadas" parent="." unique_id=972373460 instance=ExtResource("6_efo67")]
 transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, -23.111511, -5.8791046, -37.785664)
+puntuacion = 5
 
 [node name="Sangre" parent="." unique_id=159073546 instance=ExtResource("7_7oowp")]
 transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, -130.61018, 11.700989, 145.22714)
+puntuacion = 20
 
 [node name="Cuerpo" parent="." unique_id=498712689 instance=ExtResource("8_wjre0")]
 transform = Transform3D(11.226667, 38.39221, 0, -1.3398689, 0.391805, 39.97563, 38.368828, -11.219827, 1.3959799, -126.990875, -9.014957, 195.62613)
 move = 1.0
-damage = 1.0
 puntuacion = 50
 
 [node name="Cuchillo" parent="." unique_id=570827005 instance=ExtResource("9_c26eq")]
 transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, -43.121445, 17.200075, 183.00548)
+puntuacion = 0
 
 [node name="Report" parent="." unique_id=1825815602 instance=ExtResource("10_2he7q")]
 
@@ -53,25 +54,32 @@ visible = false
 
 [node name="Pisadas2" parent="." unique_id=763586129 instance=ExtResource("6_efo67")]
 transform = Transform3D(38.329422, 0, -58.5735, 0, 70, 0, 58.5735, 0, 38.329422, 41.0225, -5.267391, -156.09744)
+puntuacion = 5
 
 [node name="Puerta" parent="." unique_id=344555295 instance=ExtResource("5_6d61i")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 169, -8, -209.6672)
 visible = false
+puntuacion = 0
 
 [node name="Pisadas3" parent="." unique_id=1901000308 instance=ExtResource("6_efo67")]
 transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 12.215866, -5.3238373, 98.562256)
+puntuacion = 5
 
 [node name="Pisadas4" parent="." unique_id=1171735546 instance=ExtResource("6_efo67")]
 transform = Transform3D(68.59473, 0, -13.955755, 0, 70, 0, 13.955755, 0, 68.59473, 188.06863, -5.0989075, -100.74571)
+puntuacion = 5
 
 [node name="Pisadas5" parent="." unique_id=957124194 instance=ExtResource("6_efo67")]
 transform = Transform3D(-69.31876, 0, -9.742123, 0, 70, 0, 9.742123, 0, -69.31876, 155.83624, -5.098831, -34.96164)
+puntuacion = 5
 
 [node name="Sangre2" parent="." unique_id=1993932000 instance=ExtResource("7_7oowp")]
 transform = Transform3D(2.687148, 69.948395, 0, -69.948395, 2.687148, 0, 0, 0, 70, -60.630695, 15.355822, -110.9807)
+puntuacion = 20
 
 [node name="Veneno" parent="." unique_id=1985531365 instance=ExtResource("13_arbih")]
 transform = Transform3D(-0.92050487, 0, 0.3907311, 0, 1, 0, -0.3907311, 0, -0.92050487, -42.6557, 15.330542, 78.3803)
+puntuacion = 30
 
 [node name="Cliente" parent="." unique_id=3415239 instance=ExtResource("13_6x8df")]
 visible = false
