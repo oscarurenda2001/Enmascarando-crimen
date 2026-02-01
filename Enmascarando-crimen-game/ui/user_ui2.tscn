@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c3tuma02yo655"]
+[gd_scene format=3 uid="uid://bi2d6n7yuksjr"]
 
-[ext_resource type="Script" uid="uid://bdoily064k7q8" path="res://ui/user_ui_2.gd" id="1_3hd44"]
-[ext_resource type="Texture2D" uid="uid://b21ys1m5b2hjy" path="res://addons/Arts/godot-prototype-texture/back.png" id="1_wm4a7"]
+[ext_resource type="Script" path="res://ui/user_ui_2.gd" id="1_3hd44"]
+[ext_resource type="Texture2D" uid="uid://bntbwcjmk6wcu" path="res://ui/back.png" id="2_rq80b"]
 
 [node name="UserUi2" type="CanvasLayer" unique_id=191796885]
 script = ExtResource("1_3hd44")
@@ -10,7 +10,7 @@ script = ExtResource("1_3hd44")
 offset_right = 165.0
 offset_bottom = 64.0
 scale = Vector2(0.6944891, 0.76123554)
-texture = ExtResource("1_wm4a7")
+texture = ExtResource("2_rq80b")
 
 [node name="Label_tiempo" type="Label" parent="TextureRect" unique_id=1496228978]
 layout_mode = 1
