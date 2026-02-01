@@ -9,6 +9,7 @@ signal level_lost
 signal open_report(caseNode: Node2D)
 signal close_report(caseNode: Node2D)
 const SCENE_FINISH = "res://scenes/SceneFinish/EsceneFinish.tscn"
+var pause : bool = false
 @onready var police = $police
 var current_score: int = 0
 @export var time_left: int = 10
@@ -59,9 +60,11 @@ func showMessageItem(msg: String, actions: Array[Dictionary]) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("report"):
 		if isReport:
+			pause = false
 			isReport = !isReport
 			close_report.emit(get_tree().current_scene.find_child("Cliente"))
 		else:
+			pause = true
 			isReport = !isReport
 			open_report.emit(get_tree().current_scene.find_child("Cliente"))
 		
@@ -78,12 +81,13 @@ func _process(delta: float) -> void:
 		end_game()
 
 func _on_timer_timeout() -> void:
-	if time_left > 0:
-		time_left = time_left -1
-	if time_left<= 0:
-		police.stop()
-		end_game()
-	if time_left < 10 and !police.playing:
-		police.play()
+	if !pause:
+		if time_left > 0:
+			time_left = time_left -1
+		if time_left<= 0:
+			police.stop()
+			end_game()
+		if time_left < 10 and !police.playing:
+			police.play()
+		time_changed.emit(time_left)
 	
-	time_changed.emit(time_left)
