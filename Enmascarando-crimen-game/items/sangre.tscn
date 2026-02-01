@@ -17,3 +17,5 @@ transform = Transform3D(0.017499993, 0, 0, 0, 0.0029999989, 0, 0, 0, 0.011999995
 [node name="CollisionSangre" type="CollisionShape3D" parent="Sangre_Scene/StaticSangre" unique_id=1713394797]
 transform = Transform3D(-1.7047438e-09, -0.18, 0, 0.038999997, -7.86805e-09, 0, 0, 0, 0.5, -2.7899985, 0.49849987, 2.5000005)
 shape = SubResource("BoxShape3D_8v0kg")
+
+[connection signal="clean" from="." to="." method="_on_clean"]
