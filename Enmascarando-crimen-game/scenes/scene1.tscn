@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0vcpv8r271r3"]
 
 [ext_resource type="Script" uid="uid://yoquewhfjkpl" path="res://items/cuerpo.gd" id="1_btxjs"]
-[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="2_eptys"]
+[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="2_eptys"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="3_417ge"]
 [ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="4_vfwod"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="7_1b2e6"]
@@ -52,7 +52,7 @@ transform = Transform3D(0.24647735, 0, 0, 0, -20.342186, 6.3466566e-14, 0, 9.798
 puntuacion = 20
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1360480903]
-transform = Transform3D(1, 0, 0, 0, 1, -2.6765843e-15, 0, 2.6765843e-15, 1, 0.18157196, 65.78311, -9.536743e-07)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.18157196, 65.78311, -9.536743e-07)
 light_color = Color(0.57861936, 0.53164613, 0.4669059, 1)
 
 [node name="Cuerpo" parent="." unique_id=344555295 instance=ExtResource("10_mhfj7")]

@@ -8,7 +8,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roatg"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.7490196)
+albedo_color = Color(0.7882353, 0.7882353, 0.7882353, 0.9607843)
 albedo_texture = ExtResource("3_w7ima")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1javv"]
