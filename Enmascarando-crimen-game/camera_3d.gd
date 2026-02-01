@@ -17,8 +17,6 @@ func check_if_object():
 	if result:
 		var collider = result.collider
 		if(result.collider.name in items):
-			print(result)
-			print(collider.get_parent().get_parent())
 			grab.play()
 			var obj = collider.get_parent().get_parent()
 			obj.interact(obj)
@@ -27,16 +25,4 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta: float) -> void:
-	var y_value = 0
-	if GameManager.lvl == 1:
-		y_value = 30
-	if GameManager.lvl == 2:
-		y_value = 0
-		
-	global_position = follow_target.global_position + Vector3(0, y_value, 0)
-
-	if Input.is_action_just_pressed("click"):
-		if rayo.is_colliding():
-			grab.play()
-			var obj = rayo.get_collider()
-			obj.clicked()
+	pass
