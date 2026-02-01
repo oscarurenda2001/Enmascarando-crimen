@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="13_aqq5a"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="14_pxlpg"]
 [ext_resource type="PackedScene" uid="uid://i3hq35ppf35m" path="res://ui/item_action.tscn" id="16_4gngc"]
-[ext_resource type="PackedScene" uid="uid://c3a33twp8uamv" path="res://casos/Caso1.tscn" id="17_k2ng3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
 albedo_texture = ExtResource("6_di5qy")
@@ -90,10 +89,4 @@ visible = false
 [node name="ItemAction" parent="." unique_id=570807068 instance=ExtResource("16_4gngc")]
 visible = false
 
-[node name="Cliente" parent="." unique_id=1856350889 instance=ExtResource("17_k2ng3")]
-modulate = Color(1, 1, 1, 0)
-
-[connection signal="disapear" from="StaticBody3D/Sangre" to="StaticBody3D/Sangre" method="_on_disapear"]
-[connection signal="close_report" from="GameManager" to="Report" method="_on_close_report"]
-[connection signal="open_report" from="GameManager" to="Report" method="_on_open_report"]
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]

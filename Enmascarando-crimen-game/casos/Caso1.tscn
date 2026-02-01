@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://bixsnusv8ucp8"]
+[gd_scene format=3 uid="uid://c3a33twp8uamv"]
 
 [ext_resource type="Texture2D" uid="uid://dotoup58qo7qs" path="res://casos/cliente.png" id="1_hyj55"]
+[ext_resource type="Script" uid="uid://c0va4bk2l4ida" path="res://casos/caso_1.gd" id="1_iok41"]
 [ext_resource type="Theme" uid="uid://tfjquu1rvrns" path="res://themes/reportTheme.tres" id="2_b4ior"]
 [ext_resource type="Script" uid="uid://dvtwu73x3d0vs" path="res://casos/clientText.gd" id="3_whvdk"]
 
 [node name="Cliente" type="Node2D" unique_id=1856350889]
+script = ExtResource("1_iok41")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=189119325]
 offset_top = -2.0

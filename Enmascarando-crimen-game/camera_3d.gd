@@ -17,8 +17,6 @@ func check_if_object():
 	if result:
 		var collider = result.collider
 		if(result.collider.name in items):
-			print(result)
-			print(collider.get_parent().get_parent())
 			grab.play()
 			var obj = collider.get_parent().get_parent()
 			obj.interact(obj)
