@@ -8,7 +8,7 @@ var level_completed = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setLabelsResult(GameManager.finalScore)
-	if GameManager.actual_scene:
+	if GameManager.lvl:
 		$VBoxContainer/Button.visible = level_completed
 
 

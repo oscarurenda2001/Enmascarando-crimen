@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://hvi5shastj80"]
 
-[ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://escenas/SecondMap/Apartment.tscn" id="1_418ij"]
-[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="1_o0apk"]
+[ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://scenes/SecondMap/Apartment.tscn" id="1_418ij"]
+[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_o0apk"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="4_58cga"]
-[ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://escenas/GameManager/game_manager.tscn" id="5_o0apk"]
+[ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="5_o0apk"]
 
 [node name="SecondMap" type="Node3D" unique_id=419533099]
 

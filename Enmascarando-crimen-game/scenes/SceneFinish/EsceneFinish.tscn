@@ -3,8 +3,7 @@
 [sub_resource type="GDScript" id="GDScript_3r0ps"]
 script/source = "extends CanvasLayer
 
-const PRUEBA = \"res://prueba.tscn\"
-const SECOND_LEVEL = \"res://escenas/SecondMap/SecondMap.tscn\"
+const ACTUAL_LVL = \"res://scenes/scene%d.tscn\"
 
 var level_completed = false
 
@@ -13,9 +12,9 @@ var level_completed = false
 func _ready() -> void:
 	setLabelsResult(GameManager.finalScore)
 	if level_completed == true:
-		if GameManager.actual_scene == 'tutorial':
+		if GameManager.lvl < GameManager.lastLvl:
 			$VBoxContainer/NextLevelButton.visible = true
-		if GameManager.actual_scene == 'SegundoLugar':
+		else:
 			$VBoxContainer/NextLevelButton.visible = false
 		
 
@@ -37,12 +36,12 @@ func setLabelsResult(result):
 
 
 func _on_repeat_level_button_button_down() -> void:
-	get_tree().change_scene_to_file(PRUEBA)
+	get_tree().change_scene_to_file(ACTUAL_LVL %GameManager.lvl)
 
 
 func _on_next_level_button_button_down() -> void:
-	GameManager.actual_scene = 'SegundoLugar'
-	get_tree().change_scene_to_file(SECOND_LEVEL)
+	GameManager.lvl += 1
+	get_tree().change_scene_to_file(ACTUAL_LVL %GameManager.lvl)
 	
 "
 

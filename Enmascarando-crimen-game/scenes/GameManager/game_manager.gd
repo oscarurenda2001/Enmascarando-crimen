@@ -6,7 +6,7 @@ signal change_score(score)
 signal time_changed(time_left)
 signal level_won
 signal level_lost
-const SCENE_FINISH = "res://escenas/SceneFinish/EsceneFinish.tscn"
+const SCENE_FINISH = "res://scenes/SceneFinish/EsceneFinish.tscn"
 @onready var police = $police
 var current_score: int = 0
 @export var time_left: int = 10
@@ -16,8 +16,9 @@ var exit: bool = false
 var win: bool = false
 var min_score: int = 100
 var finalScore: int = 0
-var actual_scene = 'tutorial'
-
+var lvl = 1
+var lastLvl = 2
+var isReport = false
 
 
 func start_level() -> void:
@@ -44,6 +45,16 @@ func end_game() -> void:
 	get_tree().change_scene_to_file(SCENE_FINISH)
 	if exit or time_left <= 0:
 		is_playing = false
+		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("report"):
+		if isReport:
+			isReport = !isReport
+			get_tree().change_scene_to_file("res://scenes/scene%d.tscn" %lvl)
+		else:
+			isReport = !isReport
+			get_tree().change_scene_to_file("res://casos/caso%d.tscn" %lvl)
+		
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
