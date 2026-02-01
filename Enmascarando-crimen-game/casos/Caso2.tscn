@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d1f1u2ysbowr0"]
+
+[ext_resource type="Script" uid="uid://cmib8op6i6j37" path="res://casos/caso_2.gd" id="1_lys5f"]
+[ext_resource type="Texture2D" uid="uid://dotoup58qo7qs" path="res://casos/cliente.png" id="2_pa120"]
+[ext_resource type="Theme" uid="uid://tfjquu1rvrns" path="res://themes/reportTheme.tres" id="3_e6pb2"]
+[ext_resource type="Script" uid="uid://dvtwu73x3d0vs" path="res://casos/clientText.gd" id="4_crvtb"]
+
+[node name="Caso2" type="Node2D" unique_id=3415239]
+script = ExtResource("1_lys5f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=632213889]
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 38.0
+scale = Vector2(28.84, 16.6)
+color = Color(0.105882354, 0.09411765, 0.078431375, 1)
+
+[node name="Cliente" type="Sprite2D" parent="." unique_id=751204362]
+position = Vector2(900, 323)
+scale = Vector2(0.421, 0.421)
+texture = ExtResource("2_pa120")
+
+[node name="Content" type="RichTextLabel" parent="." unique_id=795623929]
+offset_left = 40.0
+offset_top = 35.0
+offset_right = 640.0
+offset_bottom = 607.0
+theme = ExtResource("3_e6pb2")
+bbcode_enabled = true
+text = "Fingí que todo era normal. Preparé la situación para que pareciera un descuido y le di la sustancia. No hubo forcejeo ni ruido.  Cuando empezó a encontrarse mal, ya no había vuelta atrás. Me fui y pero dejé demasiadas evidencias"
+fit_content = true
+vertical_alignment = 1
+threaded = true
+script = ExtResource("4_crvtb")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=627997508]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 170.0
+offset_bottom = 60.0
+theme = ExtResource("3_e6pb2")
+theme_override_font_sizes/normal_font_size = 35
+text = "Caso 2"
