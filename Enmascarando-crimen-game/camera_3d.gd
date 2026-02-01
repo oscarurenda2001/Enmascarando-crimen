@@ -5,7 +5,7 @@ extends Camera3D
 @onready var grab = $"../grab"
 # Called when the node enters the scene tree for the first time.
 @export var ray_length: float = 100.0  # distancia del raycast
-var items = ['StaticCuerpo','StaticSangre','StaticCuchillo','StaticPisada','StaticPuerta']
+var items = ['StaticCuerpo','StaticSangre','StaticCuchillo','StaticPisada','StaticPuerta','StaticVeneno']
 
 func check_if_object():
 	var space_state = get_world_3d().direct_space_state
