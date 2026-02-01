@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hvi5shastj80"]
 
 [ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://scenes/SecondMap/Apartment.tscn" id="1_418ij"]
-[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_o0apk"]
+[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="1_o0apk"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="4_58cga"]
 [ext_resource type="PackedScene" uid="uid://c0lxl4asha171" path="res://items/puerta.tscn" id="5_6d61i"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="5_o0apk"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="9_c26eq"]
 [ext_resource type="PackedScene" uid="uid://dp5mpqtxmf2j0" path="res://ui/report.tscn" id="10_2he7q"]
 [ext_resource type="PackedScene" uid="uid://i3hq35ppf35m" path="res://ui/item_action.tscn" id="11_arbih"]
-[ext_resource type="PackedScene" path="res://casos/Caso2.tscn" id="13_6x8df"]
+[ext_resource type="PackedScene" uid="uid://d1f1u2ysbowr0" path="res://casos/Caso2.tscn" id="13_6x8df"]
 [ext_resource type="PackedScene" uid="uid://3a63exsdp5v6" path="res://items/veneno.tscn" id="13_arbih"]
 
 [node name="SecondMap" type="Node3D" unique_id=419533099]
@@ -27,7 +27,7 @@ max_time = 90
 min_score = 80
 
 [node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("4_58cga")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -55.94655, 20.233543, -57.893494)
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -40.639, 3, -69)
 SPEED = 45.0
 JUMP_VELOCITY = 10.0
 
@@ -80,4 +80,3 @@ visible = false
 [connection signal="open_report" from="GameManager" to="Report" method="_on_open_report"]
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]
 [connection signal="exit" from="Puerta" to="Puerta" method="_on_exit"]
-[connection signal="disapear" from="Veneno" to="Veneno" method="_on_disapear"]
