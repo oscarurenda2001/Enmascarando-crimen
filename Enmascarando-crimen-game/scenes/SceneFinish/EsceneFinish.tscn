@@ -4,7 +4,7 @@
 script/source = "extends CanvasLayer
 
 const ACTUAL_LVL = \"res://scenes/scene%d.tscn\"
-
+@onready var titulo = $VBoxContainer/Title
 var level_completed = false
 
 
@@ -25,14 +25,21 @@ func _process(delta: float) -> void:
 
 
 func setLabelsResult(result):
-	if result < GameManager.min_score:
-		level_completed = false
-		$VBoxContainer/LevelResultTitle.text = \"No has conseguido enmascarar las pruebas a tiempo\"
-	if result >= GameManager.min_score:
-		level_completed = true
-		$VBoxContainer/LevelResultTitle.text = \"Has conseguido enmascarar las pruebas a tiempo\"
+	print(\"Resultado exit:\", GameManager.exit)
+	if GameManager.exit:
+		titulo.text = \" Has salido de la escena del crimen\"
+		if result < GameManager.min_score:
+			level_completed = false
+			$VBoxContainer/LevelResultTitle.text = \"No has conseguido enmascarar las pruebas a tiempo\"
+		if result >= GameManager.min_score:
+			level_completed = true
+			$VBoxContainer/LevelResultTitle.text = \"Has conseguido enmascarar las pruebas a tiempo\"
+	else:
+		titulo.text = \"Ha llegado la policia\"
+		$VBoxContainer/LevelResultTitle.text = \"Ha llegado la policia, estás detenido\"
 	$VBoxContainer/MinPointLabel.text = \"Puntuación minima: \" + str(GameManager.min_score)
 	$VBoxContainer/Result.text = \"Puntuación: \" +str(result)
+	GameManager.exit = false
 
 
 func _on_repeat_level_button_button_down() -> void:

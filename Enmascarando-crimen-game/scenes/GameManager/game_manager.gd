@@ -24,11 +24,12 @@ var isReport = false
 
 func get_current_scene():
 	return get_tree().current_scene
+	
 func start_level() -> void:
-	current_score = 200
+	current_score = 0
 	GameManager.min_score = min_score
 	time_left = max_time
-	exit = false
+	exit =false
 	win = false
 	is_playing = true
 
@@ -40,14 +41,17 @@ func add_game_score(score: int) -> void:
 	emit_signal("change_score", current_score)
 
 func end_game() -> void:
+	print("en game manager exit es:",exit)
 	if not is_playing:
 		return 
+	
+	if exit or time_left <= 0:
+		is_playing = false
 		
 	GameManager.finalScore = current_score
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file(SCENE_FINISH)
-	if exit or time_left <= 0:
-		is_playing = false
+	
 		
 func showMessageItem(msg: String, actions: Array[Dictionary]) -> void:
 	get_tree().current_scene.find_child("ItemAction").set_actions(msg, actions)
@@ -68,8 +72,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not is_playing:
+	if not is_playing :
 		return
+	if exit: 
+		end_game()
 
 func _on_timer_timeout() -> void:
 	if time_left > 0:
