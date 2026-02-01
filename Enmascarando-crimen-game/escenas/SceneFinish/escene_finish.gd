@@ -8,7 +8,8 @@ var level_completed = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setLabelsResult(GameManager.finalScore)
-	$VBoxContainer/Button.visible = level_completed
+	if GameManager.actual_scene:
+		$VBoxContainer/Button.visible = level_completed
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

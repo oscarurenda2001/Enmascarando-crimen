@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b8d31hc0mg2eh" path="res://character_body_3d.gd" id="1_bykjv"]
 [ext_resource type="Script" uid="uid://btu4usn7nbpud" path="res://camera_3d.gd" id="2_yymgt"]
 [ext_resource type="PackedScene" uid="uid://s34se0lyo2sl" path="res://MainCharacter/sketchfab_scene.tscn" id="3_toywe"]
+[ext_resource type="AudioStream" uid="uid://dxsma7nw6m1rd" path="res://sonidos/pasos-steps-40285.mp3" id="4_yymgt"]
+[ext_resource type="AudioStream" uid="uid://b8gwdpq7lf5ja" path="res://sonidos/item-swing-sfx-2-409076.mp3" id="5_toywe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71jk5"]
 size = Vector3(0.3963623, 0.75476074, 0.24633789)
@@ -28,5 +30,13 @@ rayo = NodePath("RayCast3D")
 [node name="Brazos" parent="Camera3D" unique_id=660299199 instance=ExtResource("3_toywe")]
 transform = Transform3D(-9.27192, 9.853118e-08, 5.1519936e-07, 1.6470239e-14, 5.8931937, -1.1270652, -8.1057686e-07, -1.1270652, -5.8931937, 1.4349978, -32.268337, 0.69859076)
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1887046838]
-collision_mask = 4
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=962559627]
+
+[node name="footsteps" type="AudioStreamPlayer3D" parent="." unique_id=942018114]
+stream = ExtResource("4_yymgt")
+volume_db = 15.0
+parameters/looping = false
+
+[node name="grab" type="AudioStreamPlayer3D" parent="." unique_id=888585759]
+stream = ExtResource("5_toywe")
+parameters/looping = false

@@ -1,13 +1,13 @@
 extends Node3D
 @export var puntuacion: int = 10
 @export var sprite: Node
-var is_colected: bool = false
+var ObjName: String = "Pisadas"
 
-func interact():
-	if(is_colected):
-		return
-	is_colected = true
-	emit_signal("Puntuacion",puntuacion)
+func interact(obj):
+	if(obj == self):
+		#GameManager.add_game_score(puntuacion)
+		print(ObjName)
+		queue_free()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
