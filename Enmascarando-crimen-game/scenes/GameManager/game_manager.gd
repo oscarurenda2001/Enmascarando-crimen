@@ -20,7 +20,8 @@ var lvl = 1
 var lastLvl = 2
 var isReport = false
 
-
+func get_current_scene():
+	return get_tree().current_scene
 func start_level() -> void:
 	current_score = 200
 	GameManager.min_score = min_score
