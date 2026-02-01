@@ -16,3 +16,4 @@ func _process(delta: float) -> void:
 
 func _on_exit():
 	GameManager.exit = true
+	print("print puerta")

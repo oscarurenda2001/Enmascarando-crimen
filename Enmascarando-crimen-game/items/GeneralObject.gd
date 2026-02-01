@@ -15,7 +15,6 @@ func set_variables(objName: String, puntuacion: int, msg: String, actions: Array
 func interact(obj):
 	if(obj == self):
 		GameManager.showMessageItem(msg, actions)
-		GameManager.add_game_score(puntuacion)
 		print("name: ", objName)
 	
 func _on_disapear():
