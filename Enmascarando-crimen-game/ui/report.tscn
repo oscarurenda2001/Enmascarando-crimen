@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://dp5mpqtxmf2j0"]
 
 [ext_resource type="PackedScene" uid="uid://ds6rc5656w3tu" path="res://ui/report/scene.gltf" id="1_gpdxo"]
+[ext_resource type="Script" uid="uid://cifdlo7g5yp7y" path="res://ui/report.gd" id="1_l7t0l"]
+[ext_resource type="Script" uid="uid://c4vb2bhpm115v" path="res://ui/sub_viewport_container.gd" id="2_dwg78"]
 
-[node name="Report" type="Control" unique_id=1825815602]
+[node name="Report" type="Control" unique_id=1825815602 node_paths=PackedStringArray("animation")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l7t0l")
+animation = NodePath("SubViewportContainer")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1955356599]
 layout_mode = 0
@@ -17,6 +21,7 @@ offset_top = 4.0
 offset_right = 1532.0
 offset_bottom = 516.0
 scale = Vector2(0.25, 0.25)
+script = ExtResource("2_dwg78")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1766531853]
 transparent_bg = true

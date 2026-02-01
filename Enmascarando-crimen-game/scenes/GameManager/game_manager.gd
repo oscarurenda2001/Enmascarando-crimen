@@ -6,6 +6,8 @@ signal change_score(score)
 signal time_changed(time_left)
 signal level_won
 signal level_lost
+signal open_report(caseNode: Node2D)
+signal close_report(caseNode: Node2D)
 const SCENE_FINISH = "res://scenes/SceneFinish/EsceneFinish.tscn"
 @onready var police = $police
 var current_score: int = 0
@@ -53,10 +55,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("report"):
 		if isReport:
 			isReport = !isReport
-			get_tree().change_scene_to_file("res://scenes/scene%d.tscn" %lvl)
+			close_report.emit(get_tree().current_scene.find_child("Cliente"))
 		else:
 			isReport = !isReport
-			get_tree().change_scene_to_file("res://casos/caso%d.tscn" %lvl)
+			open_report.emit(get_tree().current_scene.find_child("Cliente"))
 		
 
 # Called when the node enters the scene tree for the first time.
