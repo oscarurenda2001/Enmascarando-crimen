@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cxsxxd4jxmggh" path="res://scenes/SecondMap/Apartment.tscn" id="1_418ij"]
 [ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="1_o0apk"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="4_58cga"]
-[ext_resource type="PackedScene" uid="uid://ctdt5gs2d217x" path="res://items/puerta.tscn" id="5_6d61i"]
+[ext_resource type="PackedScene" uid="uid://c0lxl4asha171" path="res://items/puerta.tscn" id="5_6d61i"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="5_o0apk"]
 [ext_resource type="PackedScene" uid="uid://dmbis5e76n5qs" path="res://items/pisadas.tscn" id="6_efo67"]
 [ext_resource type="PackedScene" uid="uid://bm26o1j0dt1eg" path="res://items/sangre.tscn" id="7_7oowp"]
@@ -11,15 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="9_c26eq"]
 [ext_resource type="PackedScene" uid="uid://dp5mpqtxmf2j0" path="res://ui/report.tscn" id="10_2he7q"]
 [ext_resource type="PackedScene" uid="uid://i3hq35ppf35m" path="res://ui/item_action.tscn" id="11_arbih"]
-[ext_resource type="PackedScene" uid="uid://c3a33twp8uamv" path="res://casos/Caso1.tscn" id="12_6x8df"]
-[ext_resource type="Script" uid="uid://1xvrsw5qphmv" path="res://items/puerta.gd" id="13_arbih"]
+[ext_resource type="PackedScene" uid="uid://d1f1u2ysbowr0" path="res://casos/Caso2.tscn" id="13_6x8df"]
+[ext_resource type="PackedScene" uid="uid://3a63exsdp5v6" path="res://items/veneno.tscn" id="13_arbih"]
 
 [node name="SecondMap" type="Node3D" unique_id=419533099]
 
 [node name="UserUi2" parent="." unique_id=191796885 instance=ExtResource("1_o0apk")]
 
 [node name="Apartment" parent="." unique_id=741552661 instance=ExtResource("1_418ij")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1.2438965, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0072155, -1.2771263, -0.07056236)
 
 [node name="GameManager" parent="." unique_id=2083256314 instance=ExtResource("5_o0apk")]
 time_left = 90
@@ -51,16 +51,12 @@ transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, -43.121445, 17.200075, 183
 [node name="ItemAction" parent="." unique_id=570807068 instance=ExtResource("11_arbih")]
 visible = false
 
-[node name="Cliente" parent="." unique_id=1856350889 instance=ExtResource("12_6x8df")]
-modulate = Color(1, 1, 1, 0)
-
 [node name="Pisadas2" parent="." unique_id=763586129 instance=ExtResource("6_efo67")]
 transform = Transform3D(38.329422, 0, -58.5735, 0, 70, 0, 58.5735, 0, 38.329422, 41.0225, -5.267391, -156.09744)
 
 [node name="Puerta" parent="." unique_id=344555295 instance=ExtResource("5_6d61i")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 169, -8, -209.6672)
 visible = false
-script = ExtResource("13_arbih")
 
 [node name="Pisadas3" parent="." unique_id=1901000308 instance=ExtResource("6_efo67")]
 transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 12.215866, -5.3238373, 98.562256)
@@ -74,6 +70,11 @@ transform = Transform3D(-69.31876, 0, -9.742123, 0, 70, 0, 9.742123, 0, -69.3187
 [node name="Sangre2" parent="." unique_id=1993932000 instance=ExtResource("7_7oowp")]
 transform = Transform3D(2.687148, 69.948395, 0, -69.948395, 2.687148, 0, 0, 0, 70, -60.630695, 15.355822, -110.9807)
 
+[node name="Veneno" parent="." unique_id=1985531365 instance=ExtResource("13_arbih")]
+transform = Transform3D(-0.92050487, 0, 0.3907311, 0, 1, 0, -0.3907311, 0, -0.92050487, -42.6557, 15.330542, 78.3803)
+
+[node name="Cliente" parent="." unique_id=3415239 instance=ExtResource("13_6x8df")]
+
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]
 [connection signal="disapear" from="Pisadas" to="Pisadas" method="_on_disapear"]
 [connection signal="disapear" from="Sangre" to="Sangre" method="_on_disapear"]
@@ -83,3 +84,4 @@ transform = Transform3D(2.687148, 69.948395, 0, -69.948395, 2.687148, 0, 0, 0, 7
 [connection signal="disapear" from="Pisadas4" to="Pisadas4" method="_on_disapear"]
 [connection signal="disapear" from="Pisadas5" to="Pisadas5" method="_on_disapear"]
 [connection signal="disapear" from="Sangre2" to="Sangre2" method="_on_disapear"]
+[connection signal="disapear" from="Veneno" to="Veneno" method="_on_disapear"]
