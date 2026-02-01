@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 
 
 func setLabelsResult(result):
+	print(GameManager.exit)
 	if GameManager.exit:
 		if result < GameManager.min_score:
 			level_completed = false

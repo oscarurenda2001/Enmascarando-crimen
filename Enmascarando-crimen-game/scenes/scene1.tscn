@@ -7,16 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="5_igsrk"]
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="6_di5qy"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="7_1b2e6"]
-[ext_resource type="PackedScene" uid="uid://cyhel0pvk6g0j" path="res://items/pisadas.tscn" id="8_r7qbo"]
+[ext_resource type="PackedScene" uid="uid://dmbis5e76n5qs" path="res://items/pisadas.tscn" id="8_r7qbo"]
 [ext_resource type="PackedScene" uid="uid://bm26o1j0dt1eg" path="res://items/sangre.tscn" id="9_g2ved"]
 [ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="10_mhfj7"]
-[ext_resource type="PackedScene" uid="uid://b1m7ey8cfmov7" path="res://ui/indicaciones.tscn" id="11_m63tb"]
+[ext_resource type="PackedScene" path="res://ui/indicaciones.tscn" id="11_m63tb"]
 [ext_resource type="PackedScene" uid="uid://dp5mpqtxmf2j0" path="res://ui/report.tscn" id="12_gnuvk"]
 [ext_resource type="PackedScene" path="res://items/puerta.tscn" id="13_a8cc0"]
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="13_aqq5a"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="14_pxlpg"]
 [ext_resource type="PackedScene" uid="uid://i3hq35ppf35m" path="res://ui/item_action.tscn" id="16_4gngc"]
-[ext_resource type="PackedScene" uid="uid://c3a33twp8uamv" path="res://casos/Caso1.tscn" id="17_k2ng3"]
+[ext_resource type="PackedScene" uid="uid://bixsnusv8ucp8" path="res://casos/Caso1.tscn" id="17_k2ng3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
 albedo_texture = ExtResource("6_di5qy")
@@ -82,6 +82,7 @@ transform = Transform3D(9.495473, 0, 0, 0, 13.6638565, 0, 0, 0, 5.11209, -12.347
 transform = Transform3D(117.00949, 0, 0, 0, -0.19026104, 61.940628, 0, -1.9770215, -5.9609313, 12.522591, 18.714512, 30.003742)
 
 [node name="GameManager" parent="." unique_id=2083256314 instance=ExtResource("14_pxlpg")]
+max_time = 30
 
 [node name="Puerta" parent="." unique_id=2026731023 instance=ExtResource("13_a8cc0")]
 transform = Transform3D(22.59822, 0, 0, 0, -42.78798, 0, 0, 0, 4.4971037, -31.455528, 65.98587, -73.514244)
