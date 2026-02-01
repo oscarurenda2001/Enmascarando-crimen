@@ -1,18 +1,14 @@
 extends GeneralObject
+@export var sprite: Node
 
-func interact(obj):
-	if(obj == self):
-		#GameManager.add_game_score(puntuacion)
-		print(ObjName)
-		queue_free()
-	
-func _input_event():
-		GameManager.add_game_score(puntuacion)
-		queue_free()
+signal disapear()
+
+func _init() -> void:
+	set_variables("Cuchillo", 50, "¿Qué quieres hacer con el cuchillo?\nPulsa el número correspondiente.", [{"text": "1 - Quitar", "keyButton": "first", "sig": disapear}])
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

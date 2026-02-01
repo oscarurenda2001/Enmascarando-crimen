@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0vcpv8r271r3"]
 
 [ext_resource type="Script" uid="uid://yoquewhfjkpl" path="res://items/cuerpo.gd" id="1_btxjs"]
-[ext_resource type="PackedScene" path="res://ui/user_ui2.tscn" id="2_eptys"]
+[ext_resource type="PackedScene" uid="uid://c3tuma02yo655" path="res://ui/user_ui2.tscn" id="2_eptys"]
 [ext_resource type="PackedScene" uid="uid://cpqwpoytj2qs0" path="res://MainCharacter/main_character.tscn" id="3_417ge"]
 [ext_resource type="PackedScene" uid="uid://b1g1ydavipp8b" path="res://map1/nivel_1.tscn" id="4_vfwod"]
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="5_igsrk"]
@@ -12,11 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="10_mhfj7"]
 [ext_resource type="PackedScene" path="res://ui/indicaciones.tscn" id="11_m63tb"]
 [ext_resource type="PackedScene" uid="uid://dp5mpqtxmf2j0" path="res://ui/report.tscn" id="12_gnuvk"]
-[ext_resource type="PackedScene" path="res://items/puerta.tscn" id="13_a8cc0"]
+[ext_resource type="PackedScene" uid="uid://ctdt5gs2d217x" path="res://items/puerta.tscn" id="13_a8cc0"]
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="13_aqq5a"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="14_pxlpg"]
 [ext_resource type="PackedScene" uid="uid://i3hq35ppf35m" path="res://ui/item_action.tscn" id="16_4gngc"]
-[ext_resource type="PackedScene" uid="uid://bixsnusv8ucp8" path="res://casos/Caso1.tscn" id="17_k2ng3"]
+[ext_resource type="Script" uid="uid://1xvrsw5qphmv" path="res://items/puerta.gd" id="16_tjo67"]
+[ext_resource type="PackedScene" uid="uid://c3a33twp8uamv" path="res://casos/Caso1.tscn" id="17_k2ng3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xgey"]
 albedo_texture = ExtResource("6_di5qy")
@@ -87,6 +88,7 @@ max_time = 30
 [node name="Puerta" parent="." unique_id=2026731023 instance=ExtResource("13_a8cc0")]
 transform = Transform3D(22.59822, 0, 0, 0, -42.78798, 0, 0, 0, 4.4971037, -31.455528, 65.98587, -73.514244)
 visible = false
+script = ExtResource("16_tjo67")
 
 [node name="ItemAction" parent="." unique_id=570807068 instance=ExtResource("16_4gngc")]
 visible = false
@@ -94,7 +96,10 @@ visible = false
 [node name="Cliente" parent="." unique_id=1856350889 instance=ExtResource("17_k2ng3")]
 modulate = Color(1, 1, 1, 0)
 
+[connection signal="disapear" from="StaticBody3D/Pisadas" to="StaticBody3D/Pisadas" method="_on_disapear"]
 [connection signal="disapear" from="StaticBody3D/Sangre" to="StaticBody3D/Sangre" method="_on_disapear"]
+[connection signal="disapear" from="Cuchillo" to="Cuchillo" method="_on_disapear"]
 [connection signal="close_report" from="GameManager" to="Report" method="_on_close_report"]
 [connection signal="open_report" from="GameManager" to="Report" method="_on_open_report"]
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]
+[connection signal="exit" from="Puerta" to="Puerta" method="_on_exit"]
