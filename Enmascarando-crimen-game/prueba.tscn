@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c15xv4gigd7qk" path="res://items/sangre.tscn" id="8_7i0ls"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://escenas/GameManager/game_manager.tscn" id="9_rvi4t"]
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="10_2n4ld"]
+[ext_resource type="PackedScene" uid="uid://ctdt5gs2d217x" path="res://items/puerta.tscn" id="13_a8cc0"]
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="29_3tmio"]
 [ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="30_caauc"]
 [ext_resource type="PackedScene" uid="uid://b6vm6yrtbijsk" path="res://floor_cabin_asset/scene.gltf" id="31_caauc"]
@@ -73,5 +74,9 @@ transform = Transform3D(9.495473, 0, 0, 0, 13.6638565, 0, 0, 0, 5.11209, -12.347
 transform = Transform3D(117.00949, 0, 0, 0, -0.19026104, 61.940628, 0, -1.9770215, -5.9609313, 12.522591, 18.714512, 30.003742)
 
 [node name="GameManager" parent="." unique_id=2083256314 instance=ExtResource("9_rvi4t")]
+
+[node name="Puerta" parent="." unique_id=2026731023 instance=ExtResource("13_a8cc0")]
+transform = Transform3D(22.59822, 0, 0, 0, -42.78798, 0, 0, 0, 4.4971037, -31.455528, 65.98587, -73.514244)
+visible = false
 
 [connection signal="time_changed" from="GameManager" to="UserUi2" method="_on_game_manager_time_changed"]
