@@ -2,8 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="1_2vdtv"]
 [ext_resource type="Script" uid="uid://yoquewhfjkpl" path="res://items/cuerpo.gd" id="1_e07m4"]
+[ext_resource type="Texture2D" uid="uid://duvntumi8j5bh" path="res://sangre.png" id="3_w7ima"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dnhw1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roatg"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.7490196)
+albedo_texture = ExtResource("3_w7ima")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1javv"]
+material = SubResource("StandardMaterial3D_roatg")
 
 [node name="Cuerpo" type="Node3D" unique_id=344555295]
 script = ExtResource("1_e07m4")
@@ -15,3 +24,12 @@ script = ExtResource("1_e07m4")
 [node name="CollisionCuerpo" type="CollisionShape3D" parent="Cuerpo_Scene/StaticCuerpo" unique_id=449407842]
 transform = Transform3D(1.8, 0, 0, 0, 1.8251178, 0, 0, 0, 0.36, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_dnhw1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cuerpo_Scene" unique_id=1852858680]
+transform = Transform3D(0.3708499, 0, 0, 0, 0.29697734, 0.030680172, 0, -0.031292185, 0.291169, -0.008056641, 1.2031397, -0.010044694)
+visible = false
+mesh = SubResource("CapsuleMesh_1javv")
+
+[connection signal="damage_body" from="." to="." method="_on_damage_body"]
+[connection signal="disapear" from="." to="." method="_on_disapear"]
+[connection signal="nothing" from="." to="." method="_on_nothing"]

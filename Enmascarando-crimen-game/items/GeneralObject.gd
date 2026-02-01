@@ -1,10 +1,11 @@
 @abstract
 class_name GeneralObject
 extends Node3D
-var puntuacion: int = 10
+@export var puntuacion: int = 10
 var objName: String = "General Object"
 var msg: String
 var actions: Array[Dictionary]
+var enable: bool = true
 
 func set_variables(objName: String, puntuacion: int, msg: String, actions: Array[Dictionary]) -> void:
 	self.objName = objName
@@ -13,12 +14,11 @@ func set_variables(objName: String, puntuacion: int, msg: String, actions: Array
 	self.actions = actions
 
 func interact(obj):
-	if(obj == self):
+	if(obj == self && enable):
 		GameManager.showMessageItem(msg, actions)
 		print("name: ", objName)
 	
 func _on_disapear():
-	print("disapear")
 	GameManager.add_game_score(puntuacion)
 	queue_free()
 

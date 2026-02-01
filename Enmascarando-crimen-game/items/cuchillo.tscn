@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cvhf5kivc6twu"]
 
+[ext_resource type="Script" uid="uid://crawpau6bfhf8" path="res://items/cuchillo.gd" id="1_1jhl3"]
 [ext_resource type="PackedScene" uid="uid://dn6ox18ppffet" path="res://psx__bloody_cleaver_knife/scene.gltf" id="1_7eppx"]
-[ext_resource type="Script" uid="uid://cx1u3i7udsupr" path="res://cuchillo.gd" id="1_8v0kg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jhl3"]
 
 [node name="Cuchillo" type="Node3D" unique_id=159073546]
-script = ExtResource("1_8v0kg")
+script = ExtResource("1_1jhl3")
 
 [node name="Cuchillo_scene" parent="." unique_id=1458789603 instance=ExtResource("1_7eppx")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.05, 0, 0)
@@ -17,3 +17,5 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2.18
 [node name="CollisionCuchillo" type="CollisionShape3D" parent="Cuchillo_scene/StaticCuchillo" unique_id=177193471]
 transform = Transform3D(0.21000001, 0, 0, 0, -0.028000005, 0, 0, 0, 0.44000003, 0, 0, -0.015)
 shape = SubResource("BoxShape3D_1jhl3")
+
+[connection signal="disapear" from="." to="." method="_on_disapear"]

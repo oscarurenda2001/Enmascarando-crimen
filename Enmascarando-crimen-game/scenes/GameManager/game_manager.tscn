@@ -5,8 +5,8 @@
 
 [node name="GameManager" type="Node" unique_id=2083256314]
 script = ExtResource("1_d2p21")
-time_left = 15
-max_time = 15
+time_left = 30
+max_time = 30
 
 [node name="Timer" type="Timer" parent="." unique_id=1744477105]
 autostart = true
