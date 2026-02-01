@@ -1,9 +1,10 @@
 extends Control
 
-@onready var vbox := $VBoxContainer
+@onready var vbox := $Panel/VBoxContainer
 var actions: Array[Dictionary]
 
 func _input(event: InputEvent) -> void:
+	
 	for action in actions:
 		if event.is_action_pressed(action.keyButton):
 			print("action:", action.keyButton)

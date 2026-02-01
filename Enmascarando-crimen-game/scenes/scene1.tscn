@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dmbis5e76n5qs" path="res://items/pisadas.tscn" id="8_r7qbo"]
 [ext_resource type="PackedScene" uid="uid://bm26o1j0dt1eg" path="res://items/sangre.tscn" id="9_g2ved"]
 [ext_resource type="PackedScene" uid="uid://dbpsghohoi6o6" path="res://items/cuerpo.tscn" id="10_mhfj7"]
-[ext_resource type="PackedScene" path="res://ui/indicaciones.tscn" id="11_m63tb"]
+[ext_resource type="PackedScene" uid="uid://b1m7ey8cfmov7" path="res://ui/indicaciones.tscn" id="11_m63tb"]
 [ext_resource type="PackedScene" uid="uid://dp5mpqtxmf2j0" path="res://ui/report.tscn" id="12_gnuvk"]
 [ext_resource type="PackedScene" uid="uid://c0lxl4asha171" path="res://items/puerta.tscn" id="13_a8cc0"]
 [ext_resource type="PackedScene" uid="uid://cvhf5kivc6twu" path="res://items/cuchillo.tscn" id="13_aqq5a"]
 [ext_resource type="PackedScene" uid="uid://bvcq126cfdxh8" path="res://scenes/GameManager/game_manager.tscn" id="14_pxlpg"]
 [ext_resource type="PackedScene" uid="uid://i3hq35ppf35m" path="res://ui/item_action.tscn" id="16_4gngc"]
-[ext_resource type="PackedScene" uid="uid://bixsnusv8ucp8" path="res://casos/Caso1.tscn" id="17_k2ng3"]
+[ext_resource type="PackedScene" uid="uid://c3a33twp8uamv" path="res://casos/Caso1.tscn" id="17_k2ng3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0yig"]
 
@@ -25,6 +25,7 @@ script = ExtResource("1_btxjs")
 
 [node name="MainCharacter" parent="." unique_id=2100516768 instance=ExtResource("3_417ge")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 3.959, 0, 0)
+SPEED = 30.0
 
 [node name="Nivel1" parent="." unique_id=1495978626 instance=ExtResource("4_vfwod")]
 
@@ -69,7 +70,6 @@ puntuacion = 40
 [node name="Puerta" parent="." unique_id=2026731023 instance=ExtResource("13_a8cc0")]
 transform = Transform3D(22.59822, 0, 0, 0, -42.78798, 0, 0, 0, 4.4971037, -31.455528, 65.98587, -73.514244)
 visible = false
-script = ExtResource("13_a8cc0")
 puntuacion = 0
 
 [node name="ItemAction" parent="." unique_id=570807068 instance=ExtResource("16_4gngc")]
