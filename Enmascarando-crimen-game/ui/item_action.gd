@@ -1,6 +1,6 @@
 extends Control
 
-@onready var vbox := $VBoxContainer
+@onready var vbox := $CenterContainer/PanelContainer/VBoxContainer
 var actions: Array[Dictionary]
 
 func _input(event: InputEvent) -> void:
