@@ -1,10 +1,10 @@
 extends GeneralObject
 @export var sprite: Node
 
-signal exit()
+signal disapear()
 
 func _init() -> void:
-	set_variables("Puerta", 0, "¿Deseas salir?", [{"text": "1 - Sí", "keyButton": "first", "sig": exit}])
+	set_variables("Veneno", puntuacion, "¿Qué quieres hacer con el veneno?\nPulsa el número correspondiente.", [{"text": "1 - Quitar", "keyButton": "first", "sig": disapear}])
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,8 +13,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func _on_exit():
-	print("cuando sales isplaying es ",GameManager.is_playing)
-	GameManager.exit = true
-	print("print puerta")

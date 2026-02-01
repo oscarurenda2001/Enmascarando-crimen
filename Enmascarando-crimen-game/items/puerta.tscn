@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ctdt5gs2d217x"]
+[gd_scene format=3 uid="uid://c0lxl4asha171"]
 
-[ext_resource type="Script" uid="uid://yoquewhfjkpl" path="res://items/cuerpo.gd" id="1_nweco"]
+[ext_resource type="Script" uid="uid://1xvrsw5qphmv" path="res://items/puerta.gd" id="1_nweco"]
 [ext_resource type="PackedScene" uid="uid://cf7gyoykl77nr" path="res://walter_white_lab_suit_bryan_cranston/scene.gltf" id="2_k8jdb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dnhw1"]

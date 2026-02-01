@@ -25,7 +25,6 @@ func _process(delta: float) -> void:
 
 
 func setLabelsResult(result):
-	print(\"Resultado exit:\", GameManager.exit)
 	if GameManager.exit:
 		titulo.text = \" Has salido de la escena del crimen\"
 		if result < GameManager.min_score:
@@ -43,10 +42,12 @@ func setLabelsResult(result):
 
 
 func _on_repeat_level_button_button_down() -> void:
+	GameManager.is_playing = true
 	get_tree().change_scene_to_file(ACTUAL_LVL %GameManager.lvl)
 
 
 func _on_next_level_button_button_down() -> void:
+	GameManager.is_playing = true
 	GameManager.lvl += 1
 	get_tree().change_scene_to_file(ACTUAL_LVL %GameManager.lvl)
 	

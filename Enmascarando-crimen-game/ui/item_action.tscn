@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://i3hq35ppf35m"]
 
 [ext_resource type="Script" uid="uid://cwvq3p7dgp6wb" path="res://ui/item_action.gd" id="1_2qiiv"]
+[ext_resource type="Script" uid="uid://cedqbpcdrfhc5" path="res://ui/panel.gd" id="2_g3iwb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qiiv"]
+bg_color = Color(0.05490196, 0.05490196, 0.05490196, 0.5019608)
+
+[sub_resource type="Theme" id="Theme_2qiiv"]
 
 [sub_resource type="Theme" id="Theme_2qiiv"]
 
