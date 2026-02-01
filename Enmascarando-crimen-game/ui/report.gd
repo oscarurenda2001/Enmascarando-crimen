@@ -14,6 +14,5 @@ func _process(delta: float) -> void:
 func _on_open_report(caseNode: Node2D) -> void:
 	animation.fade_in(caseNode)
 
-
 func _on_close_report(caseNode: Node2D) -> void:
 	animation.fade_out(caseNode)

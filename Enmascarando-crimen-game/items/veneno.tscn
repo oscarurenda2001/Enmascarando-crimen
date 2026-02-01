@@ -16,3 +16,5 @@ script = ExtResource("1_cao73")
 [node name="CollisionVeneno" type="CollisionShape3D" parent="Veneno_scene/StaticVeneno" unique_id=1830226372]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4.29, 0, 3.875, 0)
 shape = SubResource("CylinderShape3D_cao73")
+
+[connection signal="disapear" from="." to="." method="_on_disapear"]
