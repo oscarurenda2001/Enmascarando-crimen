@@ -1,22 +1,14 @@
-extends Node3D
-@export var puntuacion: int = 5
+extends GeneralObject
 @export var sprite: Node
-var is_colected: bool = false
-var ObjName: String = "Pisadas"
 
-func interact(obj):
-	if(obj == self):
-		#GameManager.add_game_score(puntuacion)
-		print(ObjName)
-		queue_free()
-	
-func _input_event():
-		GameManager.add_game_score(puntuacion)
-		queue_free()
+signal disapear()
+
+func _init() -> void:
+	set_variables("Pisadas", 10, "¿Qué quieres hacer con las pisadas?\nPulsa el número correspondiente.", [{"text": "1 - Limpiar", "keyButton": "first", "sig": disapear}])
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
